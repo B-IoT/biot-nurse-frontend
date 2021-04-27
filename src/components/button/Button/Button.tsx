@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hover, FadeIn, FadeOut, Scale } from '../../utils/animations';
+import { Hover, FadeIn, FadeOut, Scale } from '../../../utils/animations';
 
 import './Button.css';
 

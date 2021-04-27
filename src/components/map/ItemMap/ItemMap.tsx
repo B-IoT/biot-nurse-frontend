@@ -2,22 +2,18 @@ import React, { useEffect, useMemo, useState } from 'react';
 import './ItemMap.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useQuery } from 'react-query';
-import { getItemsByCategory } from '../../api/items';
+import { getItemsByCategory } from '../../../api/api';
 
 import ReactMapGl, { FlyToInterpolator, Layer, Source } from 'react-map-gl';
-import { getPrettyItems, Item } from '../../utils/items';
+import { getPrettyItems, Item } from '../../../utils/items';
 import MapMarker from '../MapMarker/MapMarker';
-import RoundButton from '../RoundButton/RoundButton';
-import RoundInput from '../RoundInput/RoundInput';
+import RoundButton from '../../button/RoundButton/RoundButton';
+import RoundInput from '../../input/RoundInput/RoundInput';
 
-import mapboxgl from 'mapbox-gl';
 import UserMarker from '../UserMarker/UserMarker';
-import floor1 from '../../img/floor1.png';
-import floor2 from '../../img/floor2.png';
-
-// @ts-ignore
-// eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require('worker-loader!../../../node_modules/mapbox-gl/dist/mapbox-gl-csp-worker').default;
+import floor1 from '../../../img/floor1.png';
+import floor2 from '../../../img/floor2.png';
+import laforge from '../../../img/laforge.png';
 
 const flyToOperator = new FlyToInterpolator({ speed: 6 });
 
@@ -180,8 +176,25 @@ function ItemMap(props: { itemName: string }) {
                 [6.6217625055, 46.5294240453],
               ]}
             />
+            <Source
+              id="map-forge"
+              type="image"
+              url={laforge}
+              coordinates={[
+                [6.562626893173264, 46.517607277539106],
+                [6.5628093769, 46.51760915585804],
+                [6.5628127237, 46.51741702672684],
+                [6.5626283139612275, 46.517416565297],
+              ]}
+            />
             <Layer
-              id="overlay"
+              id="overlay1"
+              source="map-forge"
+              type="raster"
+              paint={{ 'raster-opacity': 1 }}
+            />
+            <Layer
+              id="overlay2"
               source="map-source"
               type="raster"
               paint={{ 'raster-opacity': 1 }}

@@ -2,8 +2,8 @@ import React from 'react';
 
 import './ItemButton.css';
 import { Link } from 'react-router-dom';
-import { Hover, FadeIn, FadeOut, Scale } from '../../utils/animations';
-import { getIconPath } from '../../utils/items';
+import { Hover, FadeIn, FadeOut, Scale } from '../../../utils/animations';
+import { getIconPath } from '../../../utils/items';
 
 export default function ItemButton(props: { itemName: string }) {
   return (

@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import Input from '../../components/Input/Input';
-import ItemButton from '../../components/ItemButton/ItemButton';
-import PlaceholderButton from '../../components/ItemButton/PlaceholderButton';
+import Input from '../../components/input/Input/Input';
+import ItemButton from '../../components/button/ItemButton/ItemButton';
+import PlaceholderButton from '../../components/button/ItemButton/PlaceholderButton';
 
 import './SearchPage.css';
 import { simplifyText } from '../../utils/items';
 import { useQuery } from 'react-query';
-import { getCategories } from '../../api/items';
-import LogOut from '../../components/LogOut/LogOut';
+import { getCategories } from '../../api/api';
+import LogOut from '../../components/button/LogOut/LogOut';
 
 function SearchPage() {
   const [categories, setCategories] = useState([] as string[]);

@@ -2,8 +2,8 @@ import React from 'react';
 import './MapPage.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-import BackButton from '../../components/BackButton/BackButton';
-import ItemMap from '../../components/ItemMap/ItemMap';
+import BackButton from '../../components/button/BackButton/BackButton';
+import ItemMap from '../../components/map/ItemMap/ItemMap';
 
 function MapPage(props: { location: { state: { itemName: string } } }) {
   return (

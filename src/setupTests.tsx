@@ -18,7 +18,7 @@ const Wrapper: React.ComponentType = ({ children }) => {
   );
 };
 
-const customRender = (ui: any, options: any) =>
+const customRender = (ui: any, options?: any) =>
   render(ui, { wrapper: Wrapper as ComponentType, ...options });
 
 global.URL.createObjectURL = jest.fn();

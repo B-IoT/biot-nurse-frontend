@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API = axios.create({ baseURL: 'https://api.b-iot.ch:8080' });
+export const URL = 'https://api.b-iot.ch:8080';
+const API = axios.create({ baseURL: URL });
 
 export function fetchToken() {
   const token = localStorage.getItem('token');
@@ -14,6 +15,7 @@ export async function authenticate(username: string, password: string) {
   const credentials = {
     username: username,
     password: password,
+    timeout: 1000,
   };
 
   try {
@@ -24,6 +26,7 @@ export async function authenticate(username: string, password: string) {
 
     return true;
   } catch (error) {
+    console.log(error);
     return false;
   }
 }
