@@ -1,6 +1,7 @@
 # biot-web-app
 
 [![CircleCI](https://circleci.com/gh/B-IoT/biot-web-app.svg?style=svg&circle-token=1e828ebeb445956810f2015a5d5fbfa8e183b093)](https://app.circleci.com/pipelines/github/B-IoT)
+[![codecov](https://codecov.io/gh/B-IoT/biot-nurse-frontend/branch/dev/graph/badge.svg?token=95DXEPZ7G8)](https://codecov.io/gh/B-IoT/biot-nurse-frontend)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
