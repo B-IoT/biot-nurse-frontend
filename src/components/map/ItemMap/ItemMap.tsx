@@ -156,59 +156,63 @@ function ItemMap(props: { itemName: string }) {
 
       <div className="map-container">
         <div className="map-mask">
-          <ReactMapGl
-            {...viewport}
-            width="90vw"
-            height="100vh"
+          <div
             className={itemsFetched ? 'map' : 'hidden'}
-            onViewportChange={setViewport}
-            mapStyle={
-              'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g'
-            }
+            data-testid={itemsFetched ? 'map' : 'hidden'}
           >
-            <Source
-              id="map-source"
-              type="image"
-              url={floor < 2 ? floor1 : floor2}
-              coordinates={[
-                [6.6221621976, 46.5298994022],
-                [6.623383043, 46.5294103301],
-                [6.6229855116, 46.5289365281],
-                [6.6217625055, 46.5294240453],
-              ]}
-            />
-            <Source
-              id="map-forge"
-              type="image"
-              url={floor < 1 ? laforge0 : laforge1}
-              coordinates={[
-                [6.562626893173264, 46.517607277539106],
-                [6.562863671772686, 46.517609132035275],
-                [6.562870180322819, 46.51710903432505],
-                [6.562632991299888, 46.51710791825781],
-              ]}
-            />
-            <Layer
-              id="overlay1"
-              source="map-forge"
-              type="raster"
-              paint={{ 'raster-opacity': 1 }}
-            />
-            <Layer
-              id="overlay2"
-              source="map-source"
-              type="raster"
-              paint={{ 'raster-opacity': 1 }}
-            />
-            {markers}
-            <UserMarker
-              userLon={userLon}
-              userLat={userLat}
-              setUserLon={setUserLon}
-              setUserLat={setUserLat}
-              setUserFetched={setUserFetched}
-            />
-          </ReactMapGl>
+            <ReactMapGl
+              {...viewport}
+              width="90vw"
+              height="100vh"
+              onViewportChange={setViewport}
+              mapStyle={
+                'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g'
+              }
+            >
+              <Source
+                id="map-source"
+                type="image"
+                url={floor < 2 ? floor1 : floor2}
+                coordinates={[
+                  [6.6221621976, 46.5298994022],
+                  [6.623383043, 46.5294103301],
+                  [6.6229855116, 46.5289365281],
+                  [6.6217625055, 46.5294240453],
+                ]}
+              />
+              <Source
+                id="map-forge"
+                type="image"
+                url={floor < 1 ? laforge0 : laforge1}
+                coordinates={[
+                  [6.562626893173264, 46.517607277539106],
+                  [6.562863671772686, 46.517609132035275],
+                  [6.562870180322819, 46.51710903432505],
+                  [6.562632991299888, 46.51710791825781],
+                ]}
+              />
+              <Layer
+                id="overlay1"
+                source="map-forge"
+                type="raster"
+                paint={{ 'raster-opacity': 1 }}
+              />
+              <Layer
+                id="overlay2"
+                source="map-source"
+                type="raster"
+                paint={{ 'raster-opacity': 1 }}
+              />
+              {markers}
+              <UserMarker
+                userLon={userLon}
+                userLat={userLat}
+                setUserLon={setUserLon}
+                setUserLat={setUserLat}
+                setUserFetched={setUserFetched}
+              />
+            </ReactMapGl>
+          </div>
           <div className="mask-edges clear" />
           <div className="blurred-edges clear" />
         </div>
