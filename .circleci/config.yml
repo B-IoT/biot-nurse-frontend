@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test:
+  build:
     working_directory: ~/my-app
     docker:
       - image: cimg/node:14.16.0
