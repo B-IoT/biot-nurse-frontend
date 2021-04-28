@@ -13,7 +13,8 @@ import RoundInput from '../../input/RoundInput/RoundInput';
 import UserMarker from '../UserMarker/UserMarker';
 import floor1 from '../../../img/floor1.png';
 import floor2 from '../../../img/floor2.png';
-import laforge from '../../../img/laforge.png';
+import laforge0 from '../../../img/laforge0.png';
+import laforge1 from '../../../img/laforge1.png';
 
 const flyToOperator = new FlyToInterpolator({ speed: 6 });
 
@@ -179,7 +180,7 @@ function ItemMap(props: { itemName: string }) {
             <Source
               id="map-forge"
               type="image"
-              url={laforge}
+              url={floor < 1 ? laforge0 : laforge1}
               coordinates={[
                 [6.562626893173264, 46.517607277539106],
                 [6.562863671772686, 46.517609132035275],
