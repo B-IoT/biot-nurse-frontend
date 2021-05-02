@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Map page matches snapshot 1`] = `
+<div
+  className="map-page"
+>
+  <div
+    className="top-container"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+    >
+      <div
+        className="back-button css-1i20ack-Hover e128ygwg0"
+      >
+        <div
+          className="back-pressed css-1gvt6rq-FadeIn e128ygwg3"
+        />
+        <div
+          className="back-shadow css-1ypgtc4-FadeOut e128ygwg2"
+        />
+        <div
+          className="back-light css-1ypgtc4-FadeOut e128ygwg2"
+        />
+        <div
+          className="back-text axiforma-book-normal-blue-30px css-zcw12y-Scale e128ygwg1"
+        >
+          &lt; Retour
+        </div>
+      </div>
+    </a>
+    <h1
+      className="map-title axiforma-semi-bold-blue-50px"
+    >
+      Voici les Lits à proximité
+    </h1>
+  </div>
+  <div
+    className="map-total-container"
+  >
+    <div
+      className="map-control-left"
+    >
+      <div
+        className="round-container css-1i20ack-Hover e128ygwg0"
+      >
+        <div
+          className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
+        />
+        <button
+          className="round-button-container"
+          data-testid="round-button"
+          onClick={[Function]}
+        >
+          <div
+            className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
+          >
+            <div
+              className="round-light"
+            />
+            <div
+              className="round-shadow"
+            />
+          </div>
+        </button>
+        <div
+          className="icon-container clear css-zcw12y-Scale e128ygwg1"
+        >
+          <img
+            alt="Button icon"
+            className="round-icon"
+            src="navbarIcons/floorUp.svg"
+          />
+        </div>
+      </div>
+      <div
+        className="round-input"
+      >
+        <img
+          alt="Round input"
+          className="round-input-img"
+          src="roundInput.png"
+        />
+        <div>
+          <input
+            className="round-input-text axiforma-book-normal-blue-30px"
+            onChange={[Function]}
+            onKeyPress={[Function]}
+            value="0"
+          />
+        </div>
+      </div>
+      <div
+        className="round-container css-1i20ack-Hover e128ygwg0"
+      >
+        <div
+          className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
+        />
+        <button
+          className="round-button-container"
+          data-testid="round-button"
+          onClick={[Function]}
+        >
+          <div
+            className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
+          >
+            <div
+              className="round-light"
+            />
+            <div
+              className="round-shadow"
+            />
+          </div>
+        </button>
+        <div
+          className="icon-container clear css-zcw12y-Scale e128ygwg1"
+        >
+          <img
+            alt="Button icon"
+            className="round-icon"
+            src="navbarIcons/floorDown.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="map-container"
+    >
+      <div
+        className="map-mask"
+      >
+        <div
+          className="hidden"
+          data-testid="hidden"
+        >
+          <div
+            style={
+              Object {
+                "cursor": "grab",
+                "height": "100vh",
+                "position": "relative",
+                "width": "90vw",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "height": "100%",
+                  "position": "relative",
+                  "width": "100%",
+                }
+              }
+            >
+              <div
+                className=""
+                style={
+                  Object {
+                    "height": "100%",
+                    "overflow": "hidden",
+                    "position": "absolute",
+                    "visibility": "inherit",
+                    "width": "100%",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          className="mask-edges clear"
+        />
+        <div
+          className="blurred-edges clear"
+        />
+      </div>
+      <div
+        className="map-blur clear"
+      >
+        <div
+          className="map-mask clear"
+        >
+          <div
+            className="map-ambient clear"
+          />
+          <div
+            className="map-shadow clear"
+          />
+          <div
+            className="map-light clear"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="map-control-right"
+    >
+      <div
+        className="round-container css-1i20ack-Hover e128ygwg0"
+      >
+        <div
+          className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
+        />
+        <button
+          className="round-button-container"
+          data-testid="round-button"
+          onClick={[Function]}
+        >
+          <div
+            className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
+          >
+            <div
+              className="round-light"
+            />
+            <div
+              className="round-shadow"
+            />
+          </div>
+        </button>
+        <div
+          className="icon-container clear css-zcw12y-Scale e128ygwg1"
+        >
+          <img
+            alt="Button icon"
+            className="round-icon"
+            src="navbarIcons/zoom.svg"
+          />
+        </div>
+      </div>
+      <div
+        className="round-container css-1i20ack-Hover e128ygwg0"
+      >
+        <div
+          className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
+        />
+        <button
+          className="round-button-container"
+          data-testid="round-button"
+          onClick={[Function]}
+        >
+          <div
+            className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
+          >
+            <div
+              className="round-light"
+            />
+            <div
+              className="round-shadow"
+            />
+          </div>
+        </button>
+        <div
+          className="icon-container clear css-zcw12y-Scale e128ygwg1"
+        >
+          <img
+            alt="Button icon"
+            className="round-icon"
+            src="navbarIcons/dezoom.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

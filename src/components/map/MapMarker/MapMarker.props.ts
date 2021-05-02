@@ -4,5 +4,5 @@ export interface MapMarkerProps {
   /**
    * The item associated to the marker
    */
-  item: Item
+  item: Item;
 }

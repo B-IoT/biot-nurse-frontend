@@ -4,4 +4,3 @@ export interface MapPageProps {
    */
   location: { state: { itemName: string } };
 }
-

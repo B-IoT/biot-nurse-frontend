@@ -9,13 +9,16 @@ import { BrowserRouter } from 'react-router-dom';
 import React, { ComponentType } from 'react';
 
 const queryClient = new QueryClient();
-
-const Wrapper: React.ComponentType = ({ children }) => {
+export const router = (children: any) => {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>{children}</BrowserRouter>
     </QueryClientProvider>
   );
+};
+
+const Wrapper: React.ComponentType = ({ children }) => {
+  return router(children);
 };
 
 const customRender = (ui: any, options?: any) =>

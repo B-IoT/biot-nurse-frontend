@@ -29,7 +29,7 @@ export default function SearchPage() {
 
   const [keyword, setKeyword] = useState('');
   const [buttons, setButtons] = useState([
-    <PlaceholderButton key='PlaceholderButton_init' />,
+    <PlaceholderButton key="PlaceholderButton_init" />,
   ]);
   useEffect(
     () =>
@@ -38,27 +38,27 @@ export default function SearchPage() {
           .filter(
             (category) =>
               keyword === '' ||
-              simplifyText(category).includes(simplifyText(keyword)),
+              simplifyText(category).includes(simplifyText(keyword))
           )
-          .map((category) => <ItemButton key={category} itemName={category} />),
+          .map((category) => <ItemButton key={category} itemName={category} />)
       ),
-    [categories, keyword],
+    [categories, keyword]
   );
 
   return (
-    <div className='search-page'>
-      <h1 className='search-title axiforma-bold-blue-70px'>
+    <div className="search-page">
+      <h1 className="search-title axiforma-bold-blue-70px">
         {'Que cherchez-vous ?'}
       </h1>
       <Input
         setKeyword={setKeyword}
-        defaultText='Rechercher'
+        defaultText="Rechercher"
         width={550}
         style={{ marginTop: 50 }}
         isPassword={false}
         enterHandler={() => null}
       />
-      <div className='result-grid'>
+      <div className="result-grid">
         {buttons}
         {placeholders}
       </div>

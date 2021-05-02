@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login page matches snapshot 1`] = `
+<div
+  className="center-login"
+>
+  <a
+    href="https://biot.webflow.io"
+  >
+    <img
+      alt="BIoT logo"
+      className="login-logo"
+      src="logoColor.png"
+    />
+  </a>
+  <div
+    className="search-bar"
+    style={
+      Object {
+        "width": 350,
+      }
+    }
+  >
+    <div
+      className="search-mask"
+      style={
+        Object {
+          "width": 350,
+        }
+      }
+    >
+      <div
+        className="search-shadow"
+        style={
+          Object {
+            "width": 450,
+          }
+        }
+      />
+      <div
+        className="search-light"
+        style={
+          Object {
+            "width": 450,
+          }
+        }
+      />
+    </div>
+    <div
+      className="search-blur"
+      style={
+        Object {
+          "width": 355,
+        }
+      }
+    >
+      <input
+        className="search-text axiforma-light-blue-21px"
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Nom d'utilisateur"
+        style={
+          Object {
+            "width": 275,
+          }
+        }
+        type=""
+      />
+    </div>
+  </div>
+  <div
+    className="search-bar"
+    style={
+      Object {
+        "marginTop": 15,
+        "width": 350,
+      }
+    }
+  >
+    <div
+      className="search-mask"
+      style={
+        Object {
+          "width": 350,
+        }
+      }
+    >
+      <div
+        className="search-shadow"
+        style={
+          Object {
+            "width": 450,
+          }
+        }
+      />
+      <div
+        className="search-light"
+        style={
+          Object {
+            "width": 450,
+          }
+        }
+      />
+    </div>
+    <div
+      className="search-blur"
+      style={
+        Object {
+          "width": 355,
+        }
+      }
+    >
+      <input
+        className="search-text axiforma-light-blue-21px"
+        onChange={[Function]}
+        onKeyPress={[Function]}
+        placeholder="Mot de passe"
+        style={
+          Object {
+            "width": 275,
+          }
+        }
+        type="password"
+      />
+    </div>
+  </div>
+  <div
+    className="button css-1i20ack-Hover e128ygwg0"
+    onClick={[Function]}
+    style={
+      Object {
+        "marginTop": 35,
+        "width": 200,
+      }
+    }
+  >
+    <div
+      className="button-pressed css-1gvt6rq-FadeIn e128ygwg3"
+      style={
+        Object {
+          "width": 200,
+        }
+      }
+    />
+    <div
+      className="button-shadow css-1ypgtc4-FadeOut e128ygwg2"
+      style={
+        Object {
+          "width": 200,
+        }
+      }
+    />
+    <div
+      className="button-light css-1ypgtc4-FadeOut e128ygwg2"
+      style={
+        Object {
+          "width": 200,
+        }
+      }
+    />
+    <div
+      className="button-text axiforma-medium-blue-22px css-zcw12y-Scale e128ygwg1"
+      style={
+        Object {
+          "width": 200,
+        }
+      }
+    >
+      Connexion
+    </div>
+  </div>
+</div>
+`;

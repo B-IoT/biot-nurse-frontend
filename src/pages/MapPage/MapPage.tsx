@@ -13,10 +13,10 @@ export default function MapPage(props: MapPageProps) {
   const { location } = props;
 
   return (
-    <div className='map-page'>
-      <div className='top-container'>
+    <div className="map-page">
+      <div className="top-container">
         <BackButton />
-        <h1 className='map-title axiforma-semi-bold-blue-50px'>
+        <h1 className="map-title axiforma-semi-bold-blue-50px">
           {'Voici les ' + location.state.itemName + 's à proximité'}
         </h1>
       </div>

@@ -28,9 +28,9 @@ export default function LoginPage() {
   }
 
   return (
-    <div className='center-login'>
-      <a href='https://biot.webflow.io'>
-        <img className='login-logo' src={logo} alt='BIoT logo' />
+    <div className="center-login">
+      <a href="https://biot.webflow.io">
+        <img className="login-logo" src={logo} alt="BIoT logo" />
       </a>
       <Input
         setKeyword={setUsername}
@@ -42,19 +42,19 @@ export default function LoginPage() {
       />
       <Input
         setKeyword={setPassword}
-        defaultText='Mot de passe'
+        defaultText="Mot de passe"
         width={350}
         style={{ marginTop: 15 }}
         isPassword={true}
         enterHandler={handleSignIn}
       />
       {showError && (
-        <div className='error-text login-error'>
+        <div className="error-text login-error">
           {'Identifiant ou mot de passe incorrect.'}
         </div>
       )}
       <Button
-        text='Connexion'
+        text="Connexion"
         onClick={handleSignIn}
         width={200}
         style={{ marginTop: 35 }}

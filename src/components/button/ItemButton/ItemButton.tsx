@@ -32,10 +32,7 @@ export default function ItemButton(props: ItemButtonProps) {
           src={getIconPath(itemName)}
           alt="Item icon"
         />
-        <div className="item-text axiforma-medium-blue-18px">
-          {' '}
-          {itemName}{' '}
-        </div>
+        <div className="item-text axiforma-medium-blue-18px"> {itemName} </div>
       </Scale>
     </Hover>
   );

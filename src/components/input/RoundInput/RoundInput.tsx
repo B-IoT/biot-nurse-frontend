@@ -29,11 +29,7 @@ export default function RoundInput(props: RoundInputProps) {
   return (
     <div className="round-input">
       <img className="round-input-img" src={roundInput} alt="Round input" />
-      <OutsideAlerter
-        value={input}
-        setValue={setLocalInput}
-        detectDrag={false}
-      >
+      <OutsideAlerter value={input} setValue={setLocalInput} detectDrag={false}>
         <input
           className="round-input-text axiforma-book-normal-blue-30px"
           value={localInput}

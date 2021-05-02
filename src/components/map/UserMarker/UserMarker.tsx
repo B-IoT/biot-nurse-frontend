@@ -7,37 +7,31 @@ import { UserMarkerProps } from './UserMarker.props';
  * Marker that indicates the location of the user.
  */
 export default function UserMarker(props: UserMarkerProps) {
-  const {
-    userLon,
-    userLat,
-    setUserLon,
-    setUserLat,
-    setUserFetched,
-  } = props;
+  const { userLon, userLat, setUserLon, setUserLat, setUserFetched } = props;
 
   useEffect(() => {
     if (navigator.geolocation) {
       setInterval(
         () =>
           navigator.geolocation.getCurrentPosition(
-            function(position) {
+            function (position) {
               setUserLon(position.coords.longitude);
               setUserLat(position.coords.latitude);
               setUserFetched(true);
             },
             (e) => console.log(e),
-            { enableHighAccuracy: false, timeout: 2000, maximumAge: 2000 },
+            { enableHighAccuracy: false, timeout: 2000, maximumAge: 2000 }
           ),
-        2000,
+        2000
       );
     }
   }, []);
 
   return (
     <Marker longitude={userLon} latitude={userLat}>
-      <div className='user-container' />
-      <div className='user-animation' />
-      <div className='user-marker' />
+      <div className="user-container" />
+      <div className="user-animation" />
+      <div className="user-marker" />
     </Marker>
   );
 }
