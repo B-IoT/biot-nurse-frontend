@@ -2,6 +2,7 @@ import './LogOut.css';
 import { useHistory } from 'react-router-dom';
 import RoundButton from '../RoundButton/RoundButton';
 import React from 'react';
+import { loginPath } from '../../../App';
 
 export default function LogOut() {
   const history = useHistory();
@@ -9,14 +10,14 @@ export default function LogOut() {
   function handleLogOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('tokenDate');
-    history.push('/login');
+    history.push(loginPath);
   }
 
   return (
     <div className="log-out">
       <RoundButton
         iconPath={'navbarIcons/logOut.svg'}
-        onClickHandler={() => handleLogOut()}
+        onClickHandler={handleLogOut}
       />
     </div>
   );

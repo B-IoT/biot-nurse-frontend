@@ -3,10 +3,11 @@ import { Hover, FadeIn, FadeOut, Scale } from '../../../utils/animations';
 
 import './BackButton.css';
 import { Link } from 'react-router-dom';
+import { searchPath } from '../../../App';
 
 export default function BackButton() {
   return (
-    <Link to="/">
+    <Link to={searchPath}>
       <Hover className="back-button">
         <FadeIn className="back-pressed" />
         <FadeOut className="back-shadow" />

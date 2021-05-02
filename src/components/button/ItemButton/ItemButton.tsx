@@ -4,6 +4,7 @@ import './ItemButton.css';
 import { Link } from 'react-router-dom';
 import { Hover, FadeIn, FadeOut, Scale } from '../../../utils/animations';
 import { getIconPath } from '../../../utils/items';
+import { mapPath } from '../../../App';
 
 export default function ItemButton(props: { itemName: string }) {
   return (
@@ -11,7 +12,7 @@ export default function ItemButton(props: { itemName: string }) {
       <FadeIn className="item-pressed" />
       <Link
         className="button-container"
-        to={{ pathname: '/tracking', state: { itemName: props.itemName } }}
+        to={{ pathname: mapPath, state: { itemName: props.itemName } }}
         style={{ textDecoration: 'none' }}
       >
         <FadeOut className="button-container">

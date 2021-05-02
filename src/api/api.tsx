@@ -1,8 +1,13 @@
 import axios from 'axios';
 
 export const URL = 'https://api.b-iot.ch:8080';
-const API = axios.create({ baseURL: URL });
+export const API = axios.create({ baseURL: URL });
+export const refetchInterval = 1000;
+export const tokenLifetime = 6 * 24 * 60 * 60 * 1000;
 
+/**
+ * Set the token
+ */
 export function fetchToken() {
   const token = localStorage.getItem('token');
   API.defaults.headers.common = { Authorization: 'Bearer ' + token };
@@ -12,10 +17,11 @@ export function fetchToken() {
  * Request the authentication token
  */
 export async function authenticate(username: string, password: string) {
+  fetchToken();
+
   const credentials = {
     username: username,
     password: password,
-    timeout: 1000,
   };
 
   try {
@@ -35,13 +41,21 @@ export async function authenticate(username: string, password: string) {
  * Get all items matching the category.
  */
 export async function getItemsByCategory(category: string) {
+  fetchToken();
+
   const params = {
     params: {
       category: category,
     },
   };
-  const { data } = await API.get('api/items', params);
-  return data;
+
+  try {
+    const { data } = await API.get('api/items', params);
+    return data;
+  } catch (error) {
+    console.log(error);
+    return undefined;
+  }
 }
 
 /**
@@ -50,23 +64,28 @@ export async function getItemsByCategory(category: string) {
  * @param {number} itemID the id of the item
  */
 export async function getItem(itemID: number) {
-  const { data } = await API.get(`api/items/${itemID}`);
-  return data;
+  fetchToken();
+
+  try {
+    const { data } = await API.get(`api/items/${itemID}`);
+    return data;
+  } catch (error) {
+    console.log(error);
+    return undefined;
+  }
 }
 
 /**
  * Get the list of categories having at least one item.
  */
 export async function getCategories() {
-  const { data } = await API.get(`api/items/categories`);
-  return data;
-}
+  fetchToken();
 
-/**
- * Creates the item in the backend.
- *
- * @param {object} item the item to create
- */
-export async function createItem(item: object) {
-  return await API.post(`api/items`, item);
+  try {
+    const { data } = await API.get(`api/items/categories`);
+    return data;
+  } catch (error) {
+    console.log(error);
+    return undefined;
+  }
 }

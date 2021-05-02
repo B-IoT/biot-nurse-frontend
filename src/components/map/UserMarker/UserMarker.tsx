@@ -19,8 +19,7 @@ function UserMarker(props: {
               props.setUserLat(position.coords.latitude);
               props.setUserFetched(true);
             },
-            () => null,
-            //(e) => console.log('Geolocation failed ' + e.code + ' ' + e.message),
+            (e) => console.log(e),
             { enableHighAccuracy: false, timeout: 2000, maximumAge: 2000 }
           ),
         2000

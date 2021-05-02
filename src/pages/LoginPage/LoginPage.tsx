@@ -6,6 +6,7 @@ import logo from '../../img/logoColor.png';
 import Button from '../../components/button/Button/Button';
 import { authenticate } from '../../api/api';
 import { useHistory } from 'react-router-dom';
+import { searchPath } from '../../App';
 
 function LoginPage() {
   const [username, setUsername] = useState('');
@@ -17,7 +18,7 @@ function LoginPage() {
     const success = await authenticate(username, password);
 
     if (success) {
-      history.push('/');
+      history.push(searchPath);
     } else {
       setShowError(true);
     }
@@ -51,7 +52,7 @@ function LoginPage() {
       )}
       <Button
         text="Connexion"
-        onClick={() => handleSignIn()}
+        onClick={handleSignIn}
         width={200}
         style={{ marginTop: 35 }}
       />

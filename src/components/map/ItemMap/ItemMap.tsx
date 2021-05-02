@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import './ItemMap.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { useQuery } from 'react-query';
-import { getItemsByCategory } from '../../../api/api';
+import { getItemsByCategory, refetchInterval } from '../../../api/api';
 
 import ReactMapGl, { FlyToInterpolator, Layer, Source } from 'react-map-gl';
 import { getPrettyItems, Item } from '../../../utils/items';
@@ -86,12 +86,13 @@ function ItemMap(props: { itemName: string }) {
   // }
 
   const { data } = useQuery('items', () => getItemsByCategory(props.itemName), {
-    refetchInterval: 1000,
+    refetchInterval: refetchInterval,
   });
+
   useEffect(() => {
     if (data !== undefined) {
       const filterItems = data.filter(
-        (item: any) =>
+        (item: Item) =>
           !isNaN(item.longitude) &&
           !isNaN(item.latitude) &&
           item.longitude != null &&
