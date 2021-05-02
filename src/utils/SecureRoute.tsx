@@ -1,9 +1,12 @@
 import { Redirect, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { fetchToken, tokenLifetime } from '../api/api';
-import { loginPath } from '../App';
+import { fetchToken, TOKEN_LIFETIME } from '../api/api';
+import { LOGIN_PATH } from '../App';
 
-function SecureRoute({ component: Component, ...rest }: any) {
+/**
+ * Route that requires the user to be logged in to be accessed.
+ */
+export default function SecureRoute({ component: Component, ...rest }: any) {
   const token = localStorage.getItem('token');
   const tokenDate = localStorage.getItem('tokenDate');
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -13,7 +16,7 @@ function SecureRoute({ component: Component, ...rest }: any) {
     if (
       token === null ||
       tokenDate === null ||
-      Date.now() - parseInt(tokenDate) > tokenLifetime
+      Date.now() - parseInt(tokenDate) > TOKEN_LIFETIME
     ) {
       setIsLoggedIn(false);
     } else {
@@ -30,12 +33,10 @@ function SecureRoute({ component: Component, ...rest }: any) {
           <Component {...props} />
         ) : (
           <Redirect
-            to={{ pathname: loginPath, state: { from: props.location } }}
+            to={{ pathname: LOGIN_PATH, state: { from: props.location } }}
           />
         )
       }
     />
   );
 }
-
-export default SecureRoute;

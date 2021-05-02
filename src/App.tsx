@@ -9,18 +9,18 @@ import SecureRoute from './utils/SecureRoute';
 
 const queryClient = new QueryClient();
 
-export const searchPath = '/';
-export const loginPath = '/login';
-export const mapPath = '/tracking';
+export const SEARCH_PATH = '/';
+export const LOGIN_PATH = '/login';
+export const MAP_PATH = '/tracking';
 
 export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Switch>
-          <SecureRoute exact path={searchPath} component={SearchPage} />
-          <Route path={loginPath} component={LoginPage} />
-          <SecureRoute path={mapPath} component={MapPage} />
+          <SecureRoute exact path={SEARCH_PATH} component={SearchPage} />
+          <Route path={LOGIN_PATH} component={LoginPage} />
+          <SecureRoute path={MAP_PATH} component={MapPage} />
         </Switch>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen />

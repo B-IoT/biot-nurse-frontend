@@ -6,9 +6,12 @@ import logo from '../../img/logoColor.png';
 import Button from '../../components/button/Button/Button';
 import { authenticate } from '../../api/api';
 import { useHistory } from 'react-router-dom';
-import { searchPath } from '../../App';
+import { SEARCH_PATH } from '../../App';
 
-function LoginPage() {
+/**
+ * The login page.
+ */
+export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
@@ -18,16 +21,16 @@ function LoginPage() {
     const success = await authenticate(username, password);
 
     if (success) {
-      history.push(searchPath);
+      history.push(SEARCH_PATH);
     } else {
       setShowError(true);
     }
   }
 
   return (
-    <div className="center-login">
-      <a href="https://biot.webflow.io">
-        <img className="login-logo" src={logo} alt="BIoT logo" />
+    <div className='center-login'>
+      <a href='https://biot.webflow.io'>
+        <img className='login-logo' src={logo} alt='BIoT logo' />
       </a>
       <Input
         setKeyword={setUsername}
@@ -39,19 +42,19 @@ function LoginPage() {
       />
       <Input
         setKeyword={setPassword}
-        defaultText="Mot de passe"
+        defaultText='Mot de passe'
         width={350}
         style={{ marginTop: 15 }}
         isPassword={true}
         enterHandler={handleSignIn}
       />
       {showError && (
-        <div className="error-text login-error">
+        <div className='error-text login-error'>
           {'Identifiant ou mot de passe incorrect.'}
         </div>
       )}
       <Button
-        text="Connexion"
+        text='Connexion'
         onClick={handleSignIn}
         width={200}
         style={{ marginTop: 35 }}
@@ -59,5 +62,3 @@ function LoginPage() {
     </div>
   );
 }
-
-export default LoginPage;

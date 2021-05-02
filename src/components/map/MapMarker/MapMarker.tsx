@@ -1,62 +1,67 @@
 import React, { useState } from 'react';
 import { Marker, Popup } from 'react-map-gl';
 import OutsideAlerter from '../../../utils/OutsideAlerter';
-import { Item } from '../../../utils/items';
 import tracker from '../../../img/marker.svg';
 import './MapMarker.css';
+import { MapMarkerProps } from './MapMarker.props';
 
-export default function MapMarker(props: { item: Item }) {
+/**
+ * Marker that indicates the location of a given item and display its information
+ * when clicked.
+ */
+export default function MapMarker(props: MapMarkerProps) {
+  const { item } = props;
   const [showPopup, togglePopup] = useState(false);
 
   return (
     <div>
       <Popup
         className={showPopup ? 'popup' : 'hidden'}
-        latitude={props.item.latitude}
-        longitude={props.item.longitude}
+        latitude={item.latitude}
+        longitude={item.longitude}
         closeButton={false}
         anchor="top"
       >
         <div className={showPopup ? 'popup-animation' : 'hidden'}>
           <div className="axiforma-medium-blue-22px">
-            {props.item.category} {props.item.status}
+            {item.category} {item.status}
             <br />
             <br />
           </div>
           <div
             className={
-              props.item.floor == null ? 'hidden' : 'axiforma-light-blue-20px'
+              item.floor == null ? 'hidden' : 'axiforma-light-blue-20px'
             }
           >
-            {'Étage: ' + props.item.floor}
+            {'Étage: ' + item.floor}
           </div>
           <div
             className={
-              props.item.service == null ? 'hidden' : 'axiforma-light-blue-20px'
+              item.service == null ? 'hidden' : 'axiforma-light-blue-20px'
             }
           >
-            {'Service: ' + props.item.service}
+            {'Service: ' + item.service}
           </div>
           <div
             className={
-              props.item.battery == null ? 'hidden' : 'axiforma-light-blue-20px'
+              item.battery == null ? 'hidden' : 'axiforma-light-blue-20px'
             }
           >
-            {'Batterie: ' + props.item.battery + '%'}
+            {'Batterie: ' + item.battery + '%'}
           </div>
           <div
             className={
-              props.item.beacon == null ? 'hidden' : 'axiforma-light-blue-20px'
+              item.beacon == null ? 'hidden' : 'axiforma-light-blue-20px'
             }
           >
-            {'MAC: ' + props.item.beacon}
+            {'MAC: ' + item.beacon}
           </div>
         </div>
       </Popup>
       <Marker
-        key={props.item.id}
-        longitude={props.item.longitude}
-        latitude={props.item.latitude}
+        key={item.id}
+        longitude={item.longitude}
+        latitude={item.latitude}
         offsetLeft={-15}
         offsetTop={-30}
       >

@@ -2,15 +2,18 @@ import './LogOut.css';
 import { useHistory } from 'react-router-dom';
 import RoundButton from '../RoundButton/RoundButton';
 import React from 'react';
-import { loginPath } from '../../../App';
+import { LOGIN_PATH } from '../../../App';
 
+/**
+ * Button that logs out the user.
+ */
 export default function LogOut() {
   const history = useHistory();
 
   function handleLogOut() {
     localStorage.removeItem('token');
     localStorage.removeItem('tokenDate');
-    history.push(loginPath);
+    history.push(LOGIN_PATH);
   }
 
   return (

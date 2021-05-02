@@ -1,24 +1,29 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import './ItemMap.css';
-import 'mapbox-gl/dist/mapbox-gl.css';
 import { useQuery } from 'react-query';
-import { getItemsByCategory, refetchInterval } from '../../../api/api';
-
+import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGl, { FlyToInterpolator, Layer, Source } from 'react-map-gl';
+
+import { getItemsByCategory, REFETCH_INTERVAL } from '../../../api/api';
 import { getPrettyItems, Item } from '../../../utils/items';
 import MapMarker from '../MapMarker/MapMarker';
 import RoundButton from '../../button/RoundButton/RoundButton';
 import RoundInput from '../../input/RoundInput/RoundInput';
-
 import UserMarker from '../UserMarker/UserMarker';
-import floor1 from '../../../img/floor1.png';
-import floor2 from '../../../img/floor2.png';
-import laforge0 from '../../../img/laforge0.png';
-import laforge1 from '../../../img/laforge1.png';
+import { ItemMapProps } from './ItemMap.props';
+import './ItemMap.css';
+
+import laSource1 from '../../../img/laSource1.png';
+import laSource2 from '../../../img/laSource2.png';
+import laForge0 from '../../../img/laForge0.png';
+import laForge1 from '../../../img/laForge1.png';
 
 const flyToOperator = new FlyToInterpolator({ speed: 6 });
 
-function ItemMap(props: { itemName: string }) {
+/**
+ * Map component displaying the location of the items corresponding to the given category.
+ */
+export default function ItemMap(props: ItemMapProps) {
+  const { itemName } = props;
   const [userLon, setUserLon] = useState(0);
   const [userLat, setUserLat] = useState(0);
   const [floor, setFloor] = useState(0);
@@ -68,7 +73,7 @@ function ItemMap(props: { itemName: string }) {
   //         item.latitude != null &&
   //         item.longitude !== 'NaN' &&
   //         item.latitude !== 'NaN' &&
-  //         item.category === props.itemName);
+  //         item.category === itemName);
   //   setItems(filterItems);
   //   const latitude =
   //     filterItems
@@ -85,8 +90,8 @@ function ItemMap(props: { itemName: string }) {
   //   setViewport(newViewport);
   // }
 
-  const { data } = useQuery('items', () => getItemsByCategory(props.itemName), {
-    refetchInterval: refetchInterval,
+  const { data } = useQuery('items', () => getItemsByCategory(itemName), {
+    refetchInterval: REFETCH_INTERVAL,
   });
 
   useEffect(() => {
@@ -97,7 +102,7 @@ function ItemMap(props: { itemName: string }) {
           !isNaN(item.latitude) &&
           item.longitude != null &&
           item.latitude != null &&
-          item.category === props.itemName
+          item.category === itemName
       );
 
       if (filterItems.length > 0) {
@@ -173,7 +178,7 @@ function ItemMap(props: { itemName: string }) {
               <Source
                 id="map-source"
                 type="image"
-                url={floor < 2 ? floor1 : floor2}
+                url={floor < 2 ? laSource1 : laSource2}
                 coordinates={[
                   [6.6221621976, 46.5298994022],
                   [6.623383043, 46.5294103301],
@@ -184,7 +189,7 @@ function ItemMap(props: { itemName: string }) {
               <Source
                 id="map-forge"
                 type="image"
-                url={floor < 1 ? laforge0 : laforge1}
+                url={floor < 1 ? laForge0 : laForge1}
                 coordinates={[
                   [6.562626893173264, 46.517607277539106],
                   [6.562863671772686, 46.517609132035275],
@@ -246,5 +251,3 @@ function ItemMap(props: { itemName: string }) {
     </div>
   );
 }
-
-export default ItemMap;

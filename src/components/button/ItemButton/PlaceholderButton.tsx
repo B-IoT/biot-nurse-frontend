@@ -1,36 +1,10 @@
-import React from 'react';
-import styled from '@emotion/styled/macro';
-
 import './ItemButton';
 import './ItemButton.css';
+import { Hover, FadeIn, FadeOut, Scale } from '../../../utils/animations';
 
-const FadeIn = styled.div({
-  opacity: 0,
-  transition: 'opacity 250ms ease',
-});
-
-const FadeOut = styled.div({
-  opacity: 1,
-  transition: 'opacity 250ms ease',
-});
-
-const Scale = styled.div({
-  transform: 'scale(1)',
-  transition: 'transform 250ms ease',
-});
-
-const Hover = styled.div({
-  [`:hover ${FadeIn}`]: {
-    opacity: 1,
-  },
-  [`:hover ${FadeOut}`]: {
-    opacity: 0,
-  },
-  [`:hover ${Scale}`]: {
-    transform: 'scale(0.9)',
-  },
-});
-
+/**
+ * Placeholder button for visualization purposes of the search page.
+ */
 export default function PlaceholderButton() {
   return (
     <Hover className="item-container">

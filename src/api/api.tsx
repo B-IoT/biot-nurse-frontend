@@ -2,8 +2,8 @@ import axios from 'axios';
 
 export const URL = 'https://api.b-iot.ch:8080';
 export const API = axios.create({ baseURL: URL });
-export const refetchInterval = 1000;
-export const tokenLifetime = 6 * 24 * 60 * 60 * 1000;
+export const REFETCH_INTERVAL = 1000;
+export const TOKEN_LIFETIME = 6 * 24 * 60 * 60 * 1000;
 
 /**
  * Set the token

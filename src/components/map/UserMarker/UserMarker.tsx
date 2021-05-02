@@ -1,39 +1,43 @@
 import { Marker } from 'react-map-gl';
 import './UserMarker.css';
-import { Dispatch, SetStateAction, useEffect } from 'react';
+import { useEffect } from 'react';
+import { UserMarkerProps } from './UserMarker.props';
 
-function UserMarker(props: {
-  userLon: number;
-  userLat: number;
-  setUserLon: Dispatch<SetStateAction<number>>;
-  setUserLat: Dispatch<SetStateAction<number>>;
-  setUserFetched: Dispatch<SetStateAction<boolean>>;
-}) {
+/**
+ * Marker that indicates the location of the user.
+ */
+export default function UserMarker(props: UserMarkerProps) {
+  const {
+    userLon,
+    userLat,
+    setUserLon,
+    setUserLat,
+    setUserFetched,
+  } = props;
+
   useEffect(() => {
     if (navigator.geolocation) {
       setInterval(
         () =>
           navigator.geolocation.getCurrentPosition(
-            function (position) {
-              props.setUserLon(position.coords.longitude);
-              props.setUserLat(position.coords.latitude);
-              props.setUserFetched(true);
+            function(position) {
+              setUserLon(position.coords.longitude);
+              setUserLat(position.coords.latitude);
+              setUserFetched(true);
             },
             (e) => console.log(e),
-            { enableHighAccuracy: false, timeout: 2000, maximumAge: 2000 }
+            { enableHighAccuracy: false, timeout: 2000, maximumAge: 2000 },
           ),
-        2000
+        2000,
       );
     }
   }, []);
 
   return (
-    <Marker longitude={props.userLon} latitude={props.userLat}>
-      <div className="user-container" />
-      <div className="user-animation" />
-      <div className="user-marker" />
+    <Marker longitude={userLon} latitude={userLat}>
+      <div className='user-container' />
+      <div className='user-animation' />
+      <div className='user-marker' />
     </Marker>
   );
 }
-
-export default UserMarker;
