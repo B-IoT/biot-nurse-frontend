@@ -9,5 +9,5 @@ export interface RoundInputProps {
   /**
    * The setter to update the linked input
    */
-  setInput: Dispatch<SetStateAction<number>>;
+  setInput: Dispatch<SetStateAction<number>> | null;
 }

@@ -49,7 +49,7 @@ export default function LoginPage() {
         enterHandler={handleSignIn}
       />
       {showError && (
-        <div className="error-text login-error">
+        <div className="error-text login-error" data-testid="error-text">
           {'Identifiant ou mot de passe incorrect.'}
         </div>
       )}

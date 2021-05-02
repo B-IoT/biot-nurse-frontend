@@ -48,7 +48,8 @@
       "!**/index.tsx",
       "!**/**.props.ts",
       "!**/react-app-env.d.ts",
-      "!**/serviceWorker.ts"
+      "!**/serviceWorker.ts",
+      "!**/api.tsx"
     ]
   },
   "prettier": {

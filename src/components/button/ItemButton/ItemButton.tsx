@@ -14,7 +14,7 @@ export default function ItemButton(props: ItemButtonProps) {
   const { itemName } = props;
 
   return (
-    <Hover className="item-container">
+    <Hover className="item-container" data-testid="item-button">
       <FadeIn className="item-pressed" />
       <Link
         className="button-container"

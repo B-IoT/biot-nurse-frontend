@@ -85,6 +85,7 @@ exports[`Map page matches snapshot 1`] = `
         <div>
           <input
             className="round-input-text axiforma-book-normal-blue-30px"
+            data-testid="round-input"
             onChange={[Function]}
             onKeyPress={[Function]}
             value="0"

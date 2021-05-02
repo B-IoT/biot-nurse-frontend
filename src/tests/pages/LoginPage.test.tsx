@@ -1,6 +1,7 @@
 import { render, router } from '../../setupTests';
 import LoginPage from '../../pages/LoginPage/LoginPage';
 import renderer from 'react-test-renderer';
+import React from 'react';
 
 it('Login page renders without crashing', () => {
   render(<LoginPage />);

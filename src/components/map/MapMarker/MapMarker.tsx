@@ -14,7 +14,7 @@ export default function MapMarker(props: MapMarkerProps) {
   const [showPopup, togglePopup] = useState(false);
 
   return (
-    <div>
+    <div data-testid="map-marker">
       <Popup
         className={showPopup ? 'popup' : 'hidden'}
         latitude={item.latitude}

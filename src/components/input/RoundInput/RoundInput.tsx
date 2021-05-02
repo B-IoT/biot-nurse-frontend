@@ -19,7 +19,7 @@ export default function RoundInput(props: RoundInputProps) {
     // Remove every character except digits
     const digits = localInput.replace(/\D/g, '');
     if (digits.length > 0) {
-      setInput(parseInt(digits, 10));
+      if (setInput) setInput(parseInt(digits, 10));
       setLocalInput(digits);
     } else {
       setLocalInput('' + input);
@@ -35,6 +35,7 @@ export default function RoundInput(props: RoundInputProps) {
           value={localInput}
           onChange={(e) => setLocalInput(e.target.value)}
           onKeyPress={(e) => (e.key === 'Enter' ? parseFloor() : null)}
+          data-testid="round-input"
         />
       </OutsideAlerter>
     </div>
