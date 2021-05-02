@@ -21,7 +21,10 @@ run.sh
 .env.test.local
 .env.production.local
 .env
+.idea
 
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+.eslintcache

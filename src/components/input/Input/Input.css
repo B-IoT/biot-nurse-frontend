@@ -1,0 +1,82 @@
+.search-bar {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 85px;
+}
+
+.search-mask {
+  border-radius: 39px;
+  height: 77px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.search-shadow {
+  border-radius: 39px;
+  filter: blur(7px);
+  border: 15px solid var(--darker-shadow);
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.search-light {
+  border-radius: 39px;
+  filter: blur(7px);
+  border: 15px solid var(--lighter-light);
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.search-blur {
+  display: flex;
+  align-items: center;
+  -webkit-backdrop-filter: blur(4px) brightness(100%);
+  backdrop-filter: blur(4px) brightness(100%);
+  border-radius: 39px;
+  height: 90px;
+  position: absolute;
+}
+
+.search-text {
+  margin-top: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  background: transparent;
+  border: none;
+  outline-color: transparent;
+  outline-style: none;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: var(--half-blue);
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: var(--half-blue);
+  opacity: 1;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: var(--half-blue);
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--half-blue);
+}
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--half-blue);
+}
+
+::placeholder {
+  /* Most modern browsers support this now. */
+  color: var(--half-blue);
+}

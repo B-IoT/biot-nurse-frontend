@@ -1,0 +1,16 @@
+.center-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.login-logo {
+  width: 200px;
+  margin-bottom: 50px;
+}
+
+.login-error {
+  margin-top: 25px;
+}
