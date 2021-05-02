@@ -28,9 +28,14 @@ export default function Input(props: InputProps) {
           type={isPassword ? 'password' : ''}
           className="search-text axiforma-light-blue-21px"
           placeholder={defaultText}
-          onChange={(e) => setKeyword(e.target.value)}
+          onChange={(e) => {
+            if (setKeyword) {
+              return setKeyword(e.target.value);
+            }
+          }}
           onKeyPress={(e) => (e.key === 'Enter' ? enterHandler() : null)}
           style={{ width: width - 75 }}
+          data-testid="input"
         />
       </div>
     </div>

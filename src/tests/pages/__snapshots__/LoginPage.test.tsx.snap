@@ -56,6 +56,7 @@ exports[`Login page matches snapshot 1`] = `
     >
       <input
         className="search-text axiforma-light-blue-21px"
+        data-testid="input"
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder="Nom d'utilisateur"
@@ -112,6 +113,7 @@ exports[`Login page matches snapshot 1`] = `
     >
       <input
         className="search-text axiforma-light-blue-21px"
+        data-testid="input"
         onChange={[Function]}
         onKeyPress={[Function]}
         placeholder="Mot de passe"

@@ -4,7 +4,7 @@ export interface InputProps {
   /**
    * The text setter to notify the component caller
    */
-  setKeyword: Dispatch<SetStateAction<string>>;
+  setKeyword: Dispatch<SetStateAction<string>> | null;
 
   /**
    * The default text displayed when the input is empty

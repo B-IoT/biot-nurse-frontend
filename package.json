@@ -40,6 +40,17 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{ts,tsx}",
+      "!**/coverage/**",
+      "!**/node_modules/**",
+      "!**/index.tsx",
+      "!**/**.props.ts",
+      "!**/react-app-env.d.ts",
+      "!**/serviceWorker.ts"
+    ]
+  },
   "prettier": {
     "arrowParens": "always",
     "bracketSpacing": true,
