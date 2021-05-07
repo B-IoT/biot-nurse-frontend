@@ -19,7 +19,7 @@ import laForge1 from '../../../img/laForge1.png';
 
 import mapboxgl from 'mapbox-gl'; // @ts-ignore
 // eslint-disable-next-line import/no-webpack-loader-syntax
-mapboxgl.workerClass = require('worker-loader!../../../node_modules/mapbox-gl/dist/mapbox-gl-csp-worker').default;
+mapboxgl.workerClass = require('worker-loader!../../../../node_modules/mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 const flyToOperator = new FlyToInterpolator({ speed: 6 });
 
