@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import SearchPage from './pages/SearchPage/SearchPage';
 import MapPage from './pages/MapPage/MapPage';
 import LoginPage from './pages/LoginPage/LoginPage';
@@ -21,6 +21,7 @@ export default function App() {
           <SecureRoute exact path={SEARCH_PATH} component={SearchPage} />
           <Route path={LOGIN_PATH} component={LoginPage} />
           <SecureRoute path={MAP_PATH} component={MapPage} />
+          <Redirect to={SEARCH_PATH} />
         </Switch>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen />

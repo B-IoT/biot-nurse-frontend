@@ -51,6 +51,13 @@ export default function MapMarker(props: MapMarkerProps) {
           </div>
           <div
             className={
+              item.temperature == null ? 'hidden' : 'axiforma-light-blue-20px'
+            }
+          >
+            {'Température: ' + item.temperature + '°C'}
+          </div>
+          <div
+            className={
               item.beacon == null ? 'hidden' : 'axiforma-light-blue-20px'
             }
           >
