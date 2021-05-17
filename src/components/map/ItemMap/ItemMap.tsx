@@ -16,6 +16,9 @@ import laSource1 from '../../../img/laSource1.png';
 import laSource2 from '../../../img/laSource2.png';
 import laForge0 from '../../../img/laForge0.png';
 import laForge1 from '../../../img/laForge1.png';
+import epfl0 from '../../../img/EPFL0.png';
+import epfl1 from '../../../img/EPFL1.png';
+import epfl2 from '../../../img/EPFL2.png';
 
 import mapboxgl from 'mapbox-gl'; // @ts-ignore
 // eslint-disable-next-line import/no-webpack-loader-syntax
@@ -201,15 +204,32 @@ export default function ItemMap(props: ItemMapProps) {
                   [6.562632991299888, 46.51710791825781],
                 ]}
               />
+              <Source
+                id="map-epfl"
+                type="image"
+                url={floor <= 0 ? epfl0 : floor === 1 ? epfl1 : epfl2}
+                coordinates={[
+                  [6.568616030085856, 46.52101710040429],
+                  [6.571625357306832, 46.521041126066834],
+                  [6.571643373393564, 46.51999620572547],
+                  [6.568631644262474, 46.51997530035722],
+                ]}
+              />
               <Layer
                 id="overlay1"
-                source="map-forge"
+                source="map-source"
                 type="raster"
                 paint={{ 'raster-opacity': 1 }}
               />
               <Layer
                 id="overlay2"
-                source="map-source"
+                source="map-forge"
+                type="raster"
+                paint={{ 'raster-opacity': 1 }}
+              />
+              <Layer
+                id="overlay3"
+                source="map-epfl"
                 type="raster"
                 paint={{ 'raster-opacity': 1 }}
               />

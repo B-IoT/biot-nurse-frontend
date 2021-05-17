@@ -5,6 +5,7 @@ export interface Item {
   service: string;
   timestamp: string;
   battery: number;
+  temperature: number;
   status: string;
   latitude: number;
   longitude: number;
@@ -60,6 +61,7 @@ export const itemExamples = getPrettyItems([
     category: 'Oxygène',
     status: 'available',
     battery: 94,
+    temperature: 20,
     latitude: 46.440896,
     longitude: 6.891924,
     timestamp: '2020-10-26T08:54:14',
@@ -71,6 +73,7 @@ export const itemExamples = getPrettyItems([
     timestamp: '2020-10-26T08:54:14',
     status: 'available',
     battery: 87,
+    temperature: 22,
     latitude: 46.44092,
     longitude: 6.891924,
     category: 'Lit',
@@ -83,6 +86,7 @@ export const itemExamples = getPrettyItems([
     timestamp: '2020-10-26T08:54:14',
     status: 'available',
     battery: 56,
+    temperature: 21,
     latitude: 46.44089,
     longitude: 6.891944,
     category: 'ECG',
@@ -96,6 +100,7 @@ export const itemExamples = getPrettyItems([
     category: 'Oxygène',
     status: 'needMaintenance',
     battery: 20,
+    temperature: 20,
     latitude: 46.44099,
     longitude: 6.891984,
     service: 'Bloc 1',
@@ -108,6 +113,7 @@ export const itemExamples = getPrettyItems([
     category: 'Lit',
     status: 'unavailable',
     battery: 0,
+    temperature: 19,
     latitude: 46.44079,
     longitude: 6.891984,
     service: 'Bloc 2',
@@ -120,6 +126,7 @@ export const itemExamples = getPrettyItems([
     category: 'Lit',
     status: 'available',
     battery: 12,
+    temperature: 21,
     latitude: 46.44089,
     longitude: 6.891684,
     service: 'Bloc 2',
@@ -132,6 +139,7 @@ export const itemExamples = getPrettyItems([
     category: 'ECG',
     status: 'available',
     battery: 12,
+    temperature: 20,
     latitude: 46.440898,
     longitude: 6.892268,
     service: 'Bloc 2',
@@ -144,6 +152,7 @@ export const itemExamples = getPrettyItems([
     category: 'ECG',
     status: 'needMaintenance',
     battery: 20,
+    temperature: 20,
     latitude: 46.441019,
     longitude: 6.891783,
     service: 'Bloc 2',
@@ -157,6 +166,7 @@ export const itemExamples = getPrettyItems([
     category: 'ECG',
     status: 'available',
     battery: 73,
+    temperature: 21,
     latitude: 46.440754,
     longitude: 6.892197,
     service: 'Bloc 2',
