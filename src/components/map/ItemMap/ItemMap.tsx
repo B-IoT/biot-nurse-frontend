@@ -33,7 +33,7 @@ export default function ItemMap(props: ItemMapProps) {
   const { itemName } = props;
   const [userLon, setUserLon] = useState(0);
   const [userLat, setUserLat] = useState(0);
-  const [floor, setFloor] = useState(0);
+  const [floor, setFloor] = useState(Infinity);
   const [itemsFetched, setItemsFetched] = useState(false);
   const [userFetched, setUserFetched] = useState(false);
   const [items, setItems] = useState([] as Item[]);
@@ -71,6 +71,15 @@ export default function ItemMap(props: ItemMapProps) {
     newViewport.transitionDuration = 'auto';
     newViewport.transitionInterpolator = flyToOperator;
     setViewport(newViewport);
+  }
+
+  function epflMapHandler() {
+    switch (floor) {
+      case 0: return epfl0;
+      case 1: return epfl1;
+      case 2: return epfl2;
+      default: return undefined;
+    }
   }
 
   // if (!itemsFetched) {
@@ -116,6 +125,13 @@ export default function ItemMap(props: ItemMapProps) {
         setItems(getPrettyItems(filterItems));
 
         if (!itemsFetched) {
+          setFloor(
+            Math.min.apply(
+              null,
+              filterItems.map((item: Item) => item.floor)
+            )
+          );
+
           const latitude =
             filterItems
               .map((item: Item) => item.latitude)
@@ -131,13 +147,6 @@ export default function ItemMap(props: ItemMapProps) {
           newViewport.latitude = latitude;
           newViewport.longitude = longitude;
           setViewport(newViewport);
-
-          setFloor(
-            Math.min.apply(
-              null,
-              filterItems.map((item: Item) => item.floor)
-            )
-          );
         }
 
         setItemsFetched(true);
@@ -193,6 +202,12 @@ export default function ItemMap(props: ItemMapProps) {
                   [6.6217625055, 46.5294240453],
                 ]}
               />
+              <Layer
+                id="overlay-source"
+                source="map-source"
+                type="raster"
+                paint={{ 'raster-opacity': 1 }}
+              />
               <Source
                 id="map-forge"
                 type="image"
@@ -204,10 +219,16 @@ export default function ItemMap(props: ItemMapProps) {
                   [6.562632991299888, 46.51710791825781],
                 ]}
               />
+              <Layer
+                id="overlay-forge"
+                source="map-forge"
+                type="raster"
+                paint={{ 'raster-opacity': 1 }}
+              />
               <Source
                 id="map-epfl"
                 type="image"
-                url={floor <= 0 ? epfl0 : floor === 1 ? epfl1 : epfl2}
+                url={epflMapHandler()}
                 coordinates={[
                   [6.568616030085856, 46.52101710040429],
                   [6.571625357306832, 46.521041126066834],
@@ -216,19 +237,7 @@ export default function ItemMap(props: ItemMapProps) {
                 ]}
               />
               <Layer
-                id="overlay1"
-                source="map-source"
-                type="raster"
-                paint={{ 'raster-opacity': 1 }}
-              />
-              <Layer
-                id="overlay2"
-                source="map-forge"
-                type="raster"
-                paint={{ 'raster-opacity': 1 }}
-              />
-              <Layer
-                id="overlay3"
+                id="overlay-epfl"
                 source="map-epfl"
                 type="raster"
                 paint={{ 'raster-opacity': 1 }}
