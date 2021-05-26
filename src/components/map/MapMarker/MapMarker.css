@@ -69,9 +69,9 @@
   background-color: var(--semi-background);
   border-radius: 15px;
   padding: 20px 20px 15px;
-  box-shadow: 0 0 15px var(--darkest-shadow);
   -webkit-backdrop-filter: blur(20px) brightness(115%) contrast(85%);
   backdrop-filter: blur(20px) brightness(115%) contrast(85%);
+  box-shadow: 0 0 15px var(--darkest-shadow);
 
   cursor: pointer;
   animation-name: scale;

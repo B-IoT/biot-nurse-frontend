@@ -75,10 +75,14 @@ export default function ItemMap(props: ItemMapProps) {
 
   function epflMapHandler() {
     switch (floor) {
-      case 0: return epfl0;
-      case 1: return epfl1;
-      case 2: return epfl2;
-      default: return undefined;
+      case 0:
+        return epfl0;
+      case 1:
+        return epfl1;
+      case 2:
+        return epfl2;
+      default:
+        return undefined;
     }
   }
 

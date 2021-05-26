@@ -125,7 +125,7 @@
   --blue: rgb(38, 115, 232);
   --half-blue: rgb(143, 168, 207);
   --background: rgb(238, 242, 251);
-  --semi-background: rgba(238, 242, 251, 0.3);
+  --semi-background: rgba(238, 242, 251, 0.9);
   --spindle: rgb(191, 208, 242);
   --error-red: rgb(255, 75, 76);
 

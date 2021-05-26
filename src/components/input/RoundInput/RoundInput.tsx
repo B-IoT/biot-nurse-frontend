@@ -34,15 +34,15 @@ export default function RoundInput(props: RoundInputProps) {
   };
 
   return (
-    <div className='round-input'>
-      <img className='round-input-img' src={roundInput} alt='Round input' />
+    <div className="round-input">
+      <img className="round-input-img" src={roundInput} alt="Round input" />
       <OutsideAlerter value={input} setValue={setLocalInput} detectDrag={false}>
         <input
-          className='round-input-text axiforma-book-normal-blue-30px'
+          className="round-input-text axiforma-book-normal-blue-30px"
           value={localInput}
           onChange={(e) => setLocalInput(e.target.value)}
           onKeyPress={(e) => (e.key === 'Enter' ? parseFloor() : null)}
-          data-testid='round-input'
+          data-testid="round-input"
         />
       </OutsideAlerter>
     </div>
