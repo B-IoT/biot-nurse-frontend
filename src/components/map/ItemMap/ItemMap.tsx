@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import ReactMapGl, { FlyToInterpolator, Layer, Source } from 'react-map-gl';
+import ReactMapGl, { FlyToInterpolator } from 'react-map-gl';
 
 import { getItemsByCategory, REFETCH_INTERVAL } from '../../../api/api';
 import { getPrettyItems, Item } from '../../../utils/items';
@@ -20,7 +20,8 @@ import epfl0 from '../../../img/EPFL0.png';
 import epfl1 from '../../../img/EPFL1.png';
 import epfl2 from '../../../img/EPFL2.png';
 
-import mapboxgl from 'mapbox-gl'; // @ts-ignore
+import mapboxgl from 'mapbox-gl';
+import MapLayer from '../MapLayer/MapLayer'; // @ts-ignore
 // eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require('worker-loader!../../../../node_modules/mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
@@ -42,7 +43,7 @@ export default function ItemMap(props: ItemMapProps) {
     longitude: 6.891924,
     zoom: 19,
     maxZoom: 22,
-    minZoom: 17,
+    minZoom: 15,
     mapStyle: 'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g',
   } as any);
 
@@ -71,19 +72,6 @@ export default function ItemMap(props: ItemMapProps) {
     newViewport.transitionDuration = 'auto';
     newViewport.transitionInterpolator = flyToOperator;
     setViewport(newViewport);
-  }
-
-  function epflMapHandler() {
-    switch (floor) {
-      case 0:
-        return epfl0;
-      case 1:
-        return epfl1;
-      case 2:
-        return epfl2;
-      default:
-        return undefined;
-    }
   }
 
   // if (!itemsFetched) {
@@ -195,10 +183,11 @@ export default function ItemMap(props: ItemMapProps) {
                 'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g'
               }
             >
-              <Source
-                id="map-source"
-                type="image"
-                url={floor < 2 ? laSource1 : laSource2}
+              <MapLayer
+                id="source"
+                floor={floor}
+                opacity={1}
+                floors={{ 1: laSource1, 2: laSource2 }}
                 coordinates={[
                   [6.6221621976, 46.5298994022],
                   [6.623383043, 46.5294103301],
@@ -206,16 +195,11 @@ export default function ItemMap(props: ItemMapProps) {
                   [6.6217625055, 46.5294240453],
                 ]}
               />
-              <Layer
-                id="overlay-source"
-                source="map-source"
-                type="raster"
-                paint={{ 'raster-opacity': 1 }}
-              />
-              <Source
-                id="map-forge"
-                type="image"
-                url={floor < 1 ? laForge0 : laForge1}
+              <MapLayer
+                id="forge"
+                floor={floor}
+                opacity={1}
+                floors={{ 0: laForge0, 1: laForge1 }}
                 coordinates={[
                   [6.562626893173264, 46.517607277539106],
                   [6.562863671772686, 46.517609132035275],
@@ -223,28 +207,17 @@ export default function ItemMap(props: ItemMapProps) {
                   [6.562632991299888, 46.51710791825781],
                 ]}
               />
-              <Layer
-                id="overlay-forge"
-                source="map-forge"
-                type="raster"
-                paint={{ 'raster-opacity': 1 }}
-              />
-              <Source
-                id="map-epfl"
-                type="image"
-                url={epflMapHandler()}
+              <MapLayer
+                id="epfl"
+                floor={floor}
+                opacity={1}
+                floors={{ 0: epfl0, 1: epfl1, 2: epfl2 }}
                 coordinates={[
                   [6.568616030085856, 46.52101710040429],
                   [6.571625357306832, 46.521041126066834],
                   [6.571643373393564, 46.51999620572547],
                   [6.568631644262474, 46.51997530035722],
                 ]}
-              />
-              <Layer
-                id="overlay-epfl"
-                source="map-epfl"
-                type="raster"
-                paint={{ 'raster-opacity': 1 }}
               />
               {markers}
               <UserMarker
