@@ -14,12 +14,12 @@ export default function RoundInput(props: RoundInputProps) {
     if (inputValue === Infinity) {
       return '';
     }
-    return inputValue;
+    return '' + inputValue;
   }
 
-  const [localInput, setLocalInput] = useState('' + filterInput(input));
+  const [localInput, setLocalInput] = useState(filterInput(input));
   useEffect(() => {
-    setLocalInput('' + filterInput(input));
+    setLocalInput(filterInput(input));
   }, [input]);
 
   const parseFloor = () => {
@@ -29,14 +29,18 @@ export default function RoundInput(props: RoundInputProps) {
       if (setInput) setInput(parseInt(digits, 10));
       setLocalInput(digits);
     } else {
-      setLocalInput('' + filterInput(input));
+      setLocalInput(filterInput(input));
     }
   };
 
   return (
     <div className="round-input">
       <img className="round-input-img" src={roundInput} alt="Round input" />
-      <OutsideAlerter value={input} setValue={setLocalInput} detectDrag={false}>
+      <OutsideAlerter
+        value={filterInput(input)}
+        setValue={setLocalInput}
+        detectDrag={false}
+      >
         <input
           className="round-input-text axiforma-book-normal-blue-30px"
           value={localInput}

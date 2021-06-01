@@ -110,6 +110,7 @@ export default function ItemMap(props: ItemMapProps) {
           !isNaN(item.latitude) &&
           item.longitude != null &&
           item.latitude != null &&
+          item.floor != null &&
           item.category === itemName
       );
 
