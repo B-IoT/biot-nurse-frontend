@@ -19,6 +19,7 @@ import laForge1 from '../../../img/laForge1.png';
 import epfl0 from '../../../img/EPFL0.png';
 import epfl1 from '../../../img/EPFL1.png';
 import epfl2 from '../../../img/EPFL2.png';
+import jura from '../../../img/jura.png';
 
 import mapboxgl from 'mapbox-gl';
 import MapLayer from '../MapLayer/MapLayer'; // @ts-ignore
@@ -83,6 +84,13 @@ export default function ItemMap(props: ItemMapProps) {
   //         item.latitude !== 'NaN' &&
   //         item.category === itemName);
   //   setItems(filterItems);
+  //
+  //   setFloor(
+  //     Math.min.apply(
+  //       null,
+  //       filterItems.map((item: Item) => item.floor)
+  //     )
+  //   );
   //   const latitude =
   //     filterItems
   //       .map((item: Item) => item.latitude)
@@ -111,19 +119,13 @@ export default function ItemMap(props: ItemMapProps) {
           item.longitude != null &&
           item.latitude != null &&
           item.floor != null &&
-          item.category === itemName
-      );
+          item.category === itemName);
 
       if (filterItems.length > 0) {
         setItems(getPrettyItems(filterItems));
 
         if (!itemsFetched) {
-          setFloor(
-            Math.min.apply(
-              null,
-              filterItems.map((item: Item) => item.floor)
-            )
-          );
+          setFloor(Math.min.apply(null, filterItems.map((item: Item) => item.floor)));
 
           const latitude =
             filterItems
@@ -152,12 +154,12 @@ export default function ItemMap(props: ItemMapProps) {
       items
         .filter((item) => item.floor === floor)
         .map((item) => <MapMarker key={item.id} item={item} />),
-    [items, floor]
+    [items, floor],
   );
 
   return (
-    <div className="map-total-container">
-      <div className="map-control-left">
+    <div className='map-total-container'>
+      <div className='map-control-left'>
         <RoundButton
           iconPath={'navbarIcons/floorUp.svg'}
           onClickHandler={() => setFloor(floor + 1)}
@@ -169,23 +171,23 @@ export default function ItemMap(props: ItemMapProps) {
         />
       </div>
 
-      <div className="map-container">
-        <div className="map-mask">
+      <div className='map-container'>
+        <div className='map-mask'>
           <div
             className={itemsFetched ? 'map' : 'hidden'}
             data-testid={itemsFetched ? 'map' : 'hidden'}
           >
             <ReactMapGl
               {...viewport}
-              width="90vw"
-              height="100vh"
+              width='90vw'
+              height='100vh'
               onViewportChange={setViewport}
               mapStyle={
                 'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g'
               }
             >
               <MapLayer
-                id="source"
+                id='source'
                 floor={floor}
                 opacity={1}
                 floors={{ 1: laSource1, 2: laSource2 }}
@@ -197,7 +199,7 @@ export default function ItemMap(props: ItemMapProps) {
                 ]}
               />
               <MapLayer
-                id="forge"
+                id='forge'
                 floor={floor}
                 opacity={1}
                 floors={{ 0: laForge0, 1: laForge1 }}
@@ -209,7 +211,7 @@ export default function ItemMap(props: ItemMapProps) {
                 ]}
               />
               <MapLayer
-                id="epfl"
+                id='epfl'
                 floor={floor}
                 opacity={1}
                 floors={{ 0: epfl0, 1: epfl1, 2: epfl2 }}
@@ -218,6 +220,18 @@ export default function ItemMap(props: ItemMapProps) {
                   [6.571625357306832, 46.521041126066834],
                   [6.571643373393564, 46.51999620572547],
                   [6.568631644262474, 46.51997530035722],
+                ]}
+              />
+              <MapLayer
+                id='jura'
+                floor={floor}
+                opacity={1}
+                floors={{ 0: jura }}
+                coordinates={[
+                  [7.338341717516884, 47.36915896661172],
+                  [7.3388349106114275, 47.36921815171731],
+                  [7.338952851681915, 47.36876905735807],
+                  [7.338453313289029, 47.36870640756432],
                 ]}
               />
               {markers}
@@ -230,26 +244,26 @@ export default function ItemMap(props: ItemMapProps) {
               />
             </ReactMapGl>
           </div>
-          <div className="mask-edges clear" />
-          <div className="blurred-edges clear" />
+          <div className='mask-edges clear' />
+          <div className='blurred-edges clear' />
         </div>
-        <div className="map-blur clear">
-          <div className="map-mask clear">
-            <div className="map-ambient clear" />
-            <div className="map-shadow clear" />
-            <div className="map-light clear" />
+        <div className='map-blur clear'>
+          <div className='map-mask clear'>
+            <div className='map-ambient clear' />
+            <div className='map-shadow clear' />
+            <div className='map-light clear' />
           </div>
         </div>
       </div>
 
-      <div className="map-control-right">
+      <div className='map-control-right'>
         {userFetched && (
           <RoundButton
             iconPath={'navbarIcons/center.svg'}
             onClickHandler={centerHandler}
           />
         )}
-        {userFetched && <div className="separator" />}
+        {userFetched && <div className='separator' />}
         <RoundButton
           iconPath={'navbarIcons/zoom.svg'}
           onClickHandler={zoomHandler}
