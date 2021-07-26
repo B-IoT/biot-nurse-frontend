@@ -119,13 +119,19 @@ export default function ItemMap(props: ItemMapProps) {
           item.longitude != null &&
           item.latitude != null &&
           item.floor != null &&
-          item.category === itemName);
+          item.category === itemName
+      );
 
       if (filterItems.length > 0) {
         setItems(getPrettyItems(filterItems));
 
         if (!itemsFetched) {
-          setFloor(Math.min.apply(null, filterItems.map((item: Item) => item.floor)));
+          setFloor(
+            Math.min.apply(
+              null,
+              filterItems.map((item: Item) => item.floor)
+            )
+          );
 
           const latitude =
             filterItems
@@ -154,12 +160,12 @@ export default function ItemMap(props: ItemMapProps) {
       items
         .filter((item) => item.floor === floor)
         .map((item) => <MapMarker key={item.id} item={item} />),
-    [items, floor],
+    [items, floor]
   );
 
   return (
-    <div className='map-total-container'>
-      <div className='map-control-left'>
+    <div className="map-total-container">
+      <div className="map-control-left">
         <RoundButton
           iconPath={'navbarIcons/floorUp.svg'}
           onClickHandler={() => setFloor(floor + 1)}
@@ -171,23 +177,23 @@ export default function ItemMap(props: ItemMapProps) {
         />
       </div>
 
-      <div className='map-container'>
-        <div className='map-mask'>
+      <div className="map-container">
+        <div className="map-mask">
           <div
             className={itemsFetched ? 'map' : 'hidden'}
             data-testid={itemsFetched ? 'map' : 'hidden'}
           >
             <ReactMapGl
               {...viewport}
-              width='90vw'
-              height='100vh'
+              width="90vw"
+              height="100vh"
               onViewportChange={setViewport}
               mapStyle={
                 'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g'
               }
             >
               <MapLayer
-                id='source'
+                id="source"
                 floor={floor}
                 opacity={1}
                 floors={{ 1: laSource1, 2: laSource2 }}
@@ -199,7 +205,7 @@ export default function ItemMap(props: ItemMapProps) {
                 ]}
               />
               <MapLayer
-                id='forge'
+                id="forge"
                 floor={floor}
                 opacity={1}
                 floors={{ 0: laForge0, 1: laForge1 }}
@@ -211,7 +217,7 @@ export default function ItemMap(props: ItemMapProps) {
                 ]}
               />
               <MapLayer
-                id='epfl'
+                id="epfl"
                 floor={floor}
                 opacity={1}
                 floors={{ 0: epfl0, 1: epfl1, 2: epfl2 }}
@@ -223,7 +229,7 @@ export default function ItemMap(props: ItemMapProps) {
                 ]}
               />
               <MapLayer
-                id='jura'
+                id="jura"
                 floor={floor}
                 opacity={1}
                 floors={{ 0: jura }}
@@ -244,26 +250,26 @@ export default function ItemMap(props: ItemMapProps) {
               />
             </ReactMapGl>
           </div>
-          <div className='mask-edges clear' />
-          <div className='blurred-edges clear' />
+          <div className="mask-edges clear" />
+          <div className="blurred-edges clear" />
         </div>
-        <div className='map-blur clear'>
-          <div className='map-mask clear'>
-            <div className='map-ambient clear' />
-            <div className='map-shadow clear' />
-            <div className='map-light clear' />
+        <div className="map-blur clear">
+          <div className="map-mask clear">
+            <div className="map-ambient clear" />
+            <div className="map-shadow clear" />
+            <div className="map-light clear" />
           </div>
         </div>
       </div>
 
-      <div className='map-control-right'>
+      <div className="map-control-right">
         {userFetched && (
           <RoundButton
             iconPath={'navbarIcons/center.svg'}
             onClickHandler={centerHandler}
           />
         )}
-        {userFetched && <div className='separator' />}
+        {userFetched && <div className="separator" />}
         <RoundButton
           iconPath={'navbarIcons/zoom.svg'}
           onClickHandler={zoomHandler}
