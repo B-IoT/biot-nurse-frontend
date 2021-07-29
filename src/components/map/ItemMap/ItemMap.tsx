@@ -19,7 +19,7 @@ import laForge1 from '../../../img/laForge1.png';
 import epfl0 from '../../../img/EPFL0.png';
 import epfl1 from '../../../img/EPFL1.png';
 import epfl2 from '../../../img/EPFL2.png';
-import jura from '../../../img/jura.png';
+import jura from '../../../img/jura0.png';
 
 import mapboxgl from 'mapbox-gl';
 import MapLayer from '../MapLayer/MapLayer'; // @ts-ignore
