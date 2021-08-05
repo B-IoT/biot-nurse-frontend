@@ -21,11 +21,11 @@ export default function SearchPage() {
       setCategories(data);
     }
   }, [data]);
-  const placeholders = new Array(17)
-    .fill(1)
-    .map((_, index) => (
-      <PlaceholderButton key={'PlaceholderButton_' + index} />
-    ));
+  // const placeholders = new Array(17)
+  //   .fill(1)
+  //   .map((_, index) => (
+  //     <PlaceholderButton key={'PlaceholderButton_' + index} />
+  //   ));
 
   const [keyword, setKeyword] = useState('');
   const [buttons, setButtons] = useState([
@@ -58,10 +58,7 @@ export default function SearchPage() {
         isPassword={false}
         enterHandler={() => null}
       />
-      <div className="result-grid">
-        {buttons}
-        {placeholders}
-      </div>
+      <div className="result-grid">{buttons}</div>
       <LogOut />
     </div>
   );
