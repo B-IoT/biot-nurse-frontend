@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useQuery } from 'react-query';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGl, { FlyToInterpolator } from 'react-map-gl';
@@ -32,7 +32,7 @@ const flyToOperator = new FlyToInterpolator({ speed: 6 });
  * Map component displaying the location of the items corresponding to the given category.
  */
 export default function ItemMap(props: ItemMapProps) {
-  const { itemName } = props;
+  const { category } = props;
   const [userLon, setUserLon] = useState(0);
   const [userLat, setUserLat] = useState(0);
   const [floor, setFloor] = useState(Infinity);
@@ -106,7 +106,7 @@ export default function ItemMap(props: ItemMapProps) {
   //   setViewport(newViewport);
   // }
 
-  const { data } = useQuery('items', () => getItemsByCategory(itemName), {
+  const { data } = useQuery('items', () => getItemsByCategory(category.id), {
     refetchInterval: REFETCH_INTERVAL,
   });
 
@@ -119,7 +119,7 @@ export default function ItemMap(props: ItemMapProps) {
           item.longitude != null &&
           item.latitude != null &&
           item.floor != null &&
-          item.category === itemName
+          item.category === category.name
       );
 
       if (filterItems.length > 0) {
@@ -153,7 +153,7 @@ export default function ItemMap(props: ItemMapProps) {
         setItemsFetched(true);
       }
     }
-  }, [data]);
+  }, [category.name, data, itemsFetched, viewport]);
 
   const markers = useMemo(
     () =>

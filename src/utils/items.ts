@@ -12,6 +12,14 @@ export interface Item {
   floor: number;
 }
 
+/**
+ * An item category
+ */
+export interface Category {
+  id: number;
+  name: string;
+}
+
 const displayTextVersion: Record<string, string> = {
   available: 'disponible',
   unavailable: 'indisponible',

@@ -39,13 +39,15 @@ export async function authenticate(username: string, password: string) {
 
 /**
  * Get all items matching the category.
+ *
+ * @param categoryID the category id
  */
-export async function getItemsByCategory(category: string) {
+export async function getItemsByCategory(categoryID: number) {
   fetchToken();
 
   const params = {
     params: {
-      category: category,
+      categoryID,
     },
   };
 

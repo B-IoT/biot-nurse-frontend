@@ -1,6 +1,8 @@
+import { Category } from "../../utils/items";
+
 export interface MapPageProps {
   /**
    * The item category
    */
-  location: { state: { itemName: string } };
+  location: { state: { category: Category } };
 }

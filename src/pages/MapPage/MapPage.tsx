@@ -1,4 +1,3 @@
-import React from 'react';
 import './MapPage.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
@@ -17,10 +16,10 @@ export default function MapPage(props: MapPageProps) {
       <div className="top-container">
         <BackButton />
         <h1 className="map-title axiforma-semi-bold-blue-50px">
-          {'Voici les ' + location.state.itemName + 's à proximité'}
+          {'Voici les ' + location.state.category.name + 's à proximité'}
         </h1>
       </div>
-      <ItemMap itemName={location.state.itemName} />
+      <ItemMap category={location.state.category} />
     </div>
   );
 }
