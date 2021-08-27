@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Marker, Popup } from 'react-map-gl';
 import OutsideAlerter from '../../../utils/OutsideAlerter';
 import tracker from '../../../img/marker.svg';

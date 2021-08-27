@@ -1,6 +1,8 @@
+import { Category } from "../../../utils/items";
+
 export interface ItemButtonProps {
   /**
-   * The name of the given item
+   * The category of the given item
    */
-  itemName: string;
+  category: Category;
 }

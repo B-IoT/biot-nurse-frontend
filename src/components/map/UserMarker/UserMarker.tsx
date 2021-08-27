@@ -25,7 +25,7 @@ export default function UserMarker(props: UserMarkerProps) {
         2000
       );
     }
-  }, []);
+  }, [setUserFetched, setUserLat, setUserLon]);
 
   return (
     <Marker longitude={userLon} latitude={userLat}>

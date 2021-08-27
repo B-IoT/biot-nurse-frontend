@@ -1,16 +1,15 @@
 import { render } from '../../../setupTests';
 import { screen } from '@testing-library/react';
 import ItemButton from '../../../components/button/ItemButton/ItemButton';
-import React from 'react';
 
 test('Item button displays correct name', () => {
-  render(<ItemButton itemName="ECG" />);
+  render(<ItemButton category={{id: 1, name: 'ECG'}} />);
   expect(screen.getByText('ECG')).toBeDefined();
 
-  render(<ItemButton itemName="Lit" />);
+  render(<ItemButton category={{id: 2, name: 'Lit'}} />);
   expect(screen.getByText('Lit')).toBeDefined();
 
-  render(<ItemButton itemName="Oxygène" />);
+  render(<ItemButton category={{id: 3, name: 'Oxygène'}} />);
   expect(screen.getByText('Oxygène')).toBeDefined();
 
   expect(screen.queryByText('Test')).toBeNull();

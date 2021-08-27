@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import './LoginPage.css';
 import Input from '../../components/input/Input/Input';

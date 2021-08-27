@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Input from '../../components/input/Input/Input';
 import ItemButton from '../../components/button/ItemButton/ItemButton';
 import PlaceholderButton from '../../components/button/ItemButton/PlaceholderButton';
 
 import './SearchPage.css';
-import { simplifyText } from '../../utils/items';
+import { Category, simplifyText } from '../../utils/items';
 import { useQuery } from 'react-query';
 import { getCategories } from '../../api/api';
 import LogOut from '../../components/button/LogOut/LogOut';
@@ -13,7 +13,7 @@ import LogOut from '../../components/button/LogOut/LogOut';
  * The search page where the user can browse the different item categories.
  */
 export default function SearchPage() {
-  const [categories, setCategories] = useState([] as string[]);
+  const [categories, setCategories] = useState([] as Category[]);
   const { data } = useQuery('categories', getCategories);
 
   useEffect(() => {
@@ -38,9 +38,11 @@ export default function SearchPage() {
           .filter(
             (category) =>
               keyword === '' ||
-              simplifyText(category).includes(simplifyText(keyword))
+              simplifyText(category.name).includes(simplifyText(keyword))
           )
-          .map((category) => <ItemButton key={category} itemName={category} />)
+          .map((category) => (
+            <ItemButton key={category.id} category={category} />
+          ))
       ),
     [categories, keyword]
   );
