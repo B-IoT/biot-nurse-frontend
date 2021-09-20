@@ -53,6 +53,20 @@ export function simplifyText(text: string): string {
 }
 
 /**
+ * Extracts the subcategory from the given category string, if it is present, otherwise it returns the string.
+ * @param fullCategory the category string, whose format is "category.subcategory"
+ * @returns the subcategory if present, the given string otherwise
+ */
+export function extractSubcategory(fullCategory: string): string {
+  const split = fullCategory.split('.');
+  if (split.length > 1) {
+    return split[1];
+  } else {
+    return fullCategory;
+  }
+}
+
+/**
  * Return the path of the corresponding item icon
  *
  * @param {string} itemName the item name
