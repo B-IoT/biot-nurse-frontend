@@ -5,7 +5,7 @@ exports[`Login page matches snapshot 1`] = `
   className="center-login"
 >
   <a
-    href="https://biot.webflow.io"
+    href="https://www.b-iot.ch"
   >
     <img
       alt="BIoT logo"

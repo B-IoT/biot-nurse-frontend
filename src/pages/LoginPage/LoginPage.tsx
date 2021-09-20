@@ -29,7 +29,7 @@ export default function LoginPage() {
 
   return (
     <div className="center-login">
-      <a href="https://biot.webflow.io">
+      <a href="https://www.b-iot.ch">
         <img className="login-logo" src={logo} alt="BIoT logo" />
       </a>
       <Input
