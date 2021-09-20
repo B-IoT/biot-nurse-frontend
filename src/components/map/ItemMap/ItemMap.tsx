@@ -4,7 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGl, { FlyToInterpolator } from 'react-map-gl';
 
 import { getItemsByCategory, REFETCH_INTERVAL } from '../../../api/api';
-import { getPrettyItems, Item } from '../../../utils/items';
+import { extractSubcategory, getPrettyItems, Item } from '../../../utils/items';
 import MapMarker from '../MapMarker/MapMarker';
 import RoundButton from '../../button/RoundButton/RoundButton';
 import RoundInput from '../../input/RoundInput/RoundInput';
@@ -75,37 +75,6 @@ export default function ItemMap(props: ItemMapProps) {
     setViewport(newViewport);
   }
 
-  // if (!itemsFetched) {
-  //   setItemsFetched(true);
-  //   const filterItems = itemExamples.filter((item: any) =>
-  //         item.longitude != null &&
-  //         item.latitude != null &&
-  //         item.longitude !== 'NaN' &&
-  //         item.latitude !== 'NaN' &&
-  //         item.category === itemName);
-  //   setItems(filterItems);
-  //
-  //   setFloor(
-  //     Math.min.apply(
-  //       null,
-  //       filterItems.map((item: Item) => item.floor)
-  //     )
-  //   );
-  //   const latitude =
-  //     filterItems
-  //       .map((item: Item) => item.latitude)
-  //       .reduce((acc: number, lat: number) => acc + lat) / filterItems.length;
-  //   const longitude =
-  //     filterItems
-  //       .map((item: Item) => item.longitude)
-  //       .reduce((acc: number, lon: number) => acc + lon) / filterItems.length;
-  //
-  //   let newViewport = { ...viewport };
-  //   newViewport.latitude = latitude;
-  //   newViewport.longitude = longitude;
-  //   setViewport(newViewport);
-  // }
-
   const { data } = useQuery('items', () => getItemsByCategory(category.id), {
     refetchInterval: REFETCH_INTERVAL,
   });
@@ -119,7 +88,7 @@ export default function ItemMap(props: ItemMapProps) {
           item.longitude != null &&
           item.latitude != null &&
           item.floor != null &&
-          item.category === category.name
+          extractSubcategory(item.category) === category.name
       );
 
       if (filterItems.length > 0) {
