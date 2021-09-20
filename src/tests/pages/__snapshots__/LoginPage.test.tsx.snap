@@ -59,7 +59,7 @@ exports[`Login page matches snapshot 1`] = `
         data-testid="input"
         onChange={[Function]}
         onKeyPress={[Function]}
-        placeholder="Nom d'utilisateur"
+        placeholder="Username"
         style={
           Object {
             "width": 275,
@@ -116,7 +116,7 @@ exports[`Login page matches snapshot 1`] = `
         data-testid="input"
         onChange={[Function]}
         onKeyPress={[Function]}
-        placeholder="Mot de passe"
+        placeholder="Password"
         style={
           Object {
             "width": 275,
@@ -168,7 +168,7 @@ exports[`Login page matches snapshot 1`] = `
         }
       }
     >
-      Connexion
+      Login
     </div>
   </div>
 </div>

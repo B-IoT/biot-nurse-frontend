@@ -26,14 +26,14 @@ exports[`Map page matches snapshot 1`] = `
         <div
           className="back-text axiforma-book-normal-blue-30px css-zcw12y-Scale e128ygwg1"
         >
-          &lt; Retour
+          &lt; Back
         </div>
       </div>
     </a>
     <h1
       className="map-title axiforma-semi-bold-blue-50px"
     >
-      Voici les Lits à proximité
+      Here are the closest Lits
     </h1>
   </div>
   <div
