@@ -1,0 +1,10 @@
+{
+  "back": "Back",
+  "search": "Search",
+  "whatAreYouLookingFor": "What are you looking for?",
+  "username": "Username",
+  "password": "Password",
+  "wrongCredentials": "Wrong username or password",
+  "login": "Login",
+  "hereAreClosest": "Here are the closest %{category}s"
+}

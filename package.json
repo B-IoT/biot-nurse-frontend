@@ -9,6 +9,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "axios": "^0.21.1",
+    "i18n-js": "^3.8.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-map-gl": "^6.1.9",
@@ -79,6 +80,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.6",
+    "@types/i18n-js": "^3.8.2",
     "@types/react-router-dom": "^5.1.7",
     "@types/react-test-renderer": "^17.0.1",
     "husky": "^4.3.6",

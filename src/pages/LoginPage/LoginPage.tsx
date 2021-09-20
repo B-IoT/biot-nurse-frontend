@@ -7,6 +7,14 @@ import Button from '../../components/button/Button/Button';
 import { authenticate } from '../../api/api';
 import { useHistory } from 'react-router-dom';
 import { SEARCH_PATH } from '../../App';
+import { translate } from '../../i18n';
+
+const strings = {
+  username: translate("username"),
+  password: translate("password"),
+  wrongCredentials: translate("wrongCredentials"),
+  login: translate("login")
+}
 
 /**
  * The login page.
@@ -24,6 +32,7 @@ export default function LoginPage() {
       history.push(SEARCH_PATH);
     } else {
       setShowError(true);
+      setTimeout(() => setShowError(false), 3000)
     }
   }
 
@@ -34,7 +43,7 @@ export default function LoginPage() {
       </a>
       <Input
         setKeyword={setUsername}
-        defaultText="Nom d'utilisateur"
+        defaultText={strings.username!}
         width={350}
         style={{}}
         isPassword={false}
@@ -42,7 +51,7 @@ export default function LoginPage() {
       />
       <Input
         setKeyword={setPassword}
-        defaultText="Mot de passe"
+        defaultText={strings.password!}
         width={350}
         style={{ marginTop: 15 }}
         isPassword={true}
@@ -50,11 +59,11 @@ export default function LoginPage() {
       />
       {showError && (
         <div className="error-text login-error" data-testid="error-text">
-          {'Identifiant ou mot de passe incorrect.'}
+          {strings.wrongCredentials}
         </div>
       )}
       <Button
-        text="Connexion"
+        text={strings.login!}
         onClick={handleSignIn}
         width={200}
         style={{ marginTop: 35 }}

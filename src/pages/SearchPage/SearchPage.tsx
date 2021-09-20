@@ -8,6 +8,12 @@ import { Category, simplifyText } from '../../utils/items';
 import { useQuery } from 'react-query';
 import { getCategories } from '../../api/api';
 import LogOut from '../../components/button/LogOut/LogOut';
+import { translate } from '../../i18n';
+
+const strings = {
+  search: translate("search"),
+  whatAreYouLookingFor: translate("whatAreYouLookingFor")
+}
 
 /**
  * The search page where the user can browse the different item categories.
@@ -50,11 +56,11 @@ export default function SearchPage() {
   return (
     <div className="search-page">
       <h1 className="search-title axiforma-bold-blue-70px">
-        {'Que cherchez-vous ?'}
+        {strings.whatAreYouLookingFor}
       </h1>
       <Input
         setKeyword={setKeyword}
-        defaultText="Rechercher"
+        defaultText={strings.search!}
         width={550}
         style={{ marginTop: 50 }}
         isPassword={false}
