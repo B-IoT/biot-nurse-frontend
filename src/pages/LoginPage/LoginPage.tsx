@@ -30,7 +30,7 @@ export default function LoginPage() {
   return (
     <div className="center-login">
       <a href="https://www.b-iot.ch">
-        <img className="login-logo" src={logo} alt="BIoT logo" />
+        <img className="login-logo" src={logo} alt="BioT logo" />
       </a>
       <Input
         setKeyword={setUsername}

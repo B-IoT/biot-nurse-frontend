@@ -12,9 +12,10 @@
 }
 
 .result-grid {
-  align-items: center;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 50%;
   margin-top: 50px;
   margin-bottom: 50px;
 }
