@@ -1,18 +1,13 @@
 import { ReactNode } from 'react';
 
-export interface ButtonProps {
+export interface ContainerProps {
   /**
-   * The function executed when the button is clicked
-   */
-  onClick: () => void;
-
-  /**
-   * The width of the button
+   * The width of the container
    */
   width: number | string;
 
   /**
-   * The height of the button
+   * The height of the container
    */
   height: number | string;
 
@@ -27,7 +22,7 @@ export interface ButtonProps {
   style: {};
 
   /**
-   * The button's children
+   * The container's children
    */
   children: ReactNode;
 }

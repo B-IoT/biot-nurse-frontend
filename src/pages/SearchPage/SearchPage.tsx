@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 import Input from '../../components/input/Input/Input';
-import ItemButton from '../../components/button/ItemButton/ItemButton';
-import PlaceholderButton from '../../components/button/ItemButton/PlaceholderButton';
 
 import './SearchPage.css';
-import { Category, simplifyText } from '../../utils/items';
+import { Category, getIconPath, simplifyText } from '../../utils/items';
 import { useQuery } from 'react-query';
 import { getCategories } from '../../api/api';
 import LogOut from '../../components/button/LogOut/LogOut';
+import { MAP_PATH } from '../../App';
+import Button from '../../components/button/Button/Button';
+import { Scale } from '../../utils/animations';
+import { Link } from 'react-router-dom';
 
 /**
  * The search page where the user can browse the different item categories.
@@ -23,9 +25,7 @@ export default function SearchPage() {
   }, [data]);
 
   const [keyword, setKeyword] = useState('');
-  const [buttons, setButtons] = useState([
-    <PlaceholderButton key="PlaceholderButton_init" />,
-  ]);
+  const [buttons, setButtons] = useState([<div />]);
   useEffect(
     () =>
       setButtons(
@@ -36,7 +36,33 @@ export default function SearchPage() {
               simplifyText(category.name).includes(simplifyText(keyword))
           )
           .map((category) => (
-            <ItemButton key={category.id} category={category} />
+            <Link
+              key={category.id}
+              className="item-container"
+              to={{ pathname: MAP_PATH, state: { category } }}
+              style={{ textDecoration: 'none' }}
+            >
+              <Button
+                onClick={() => null}
+                width={210}
+                height={210}
+                borderRadius={50}
+                style={{}}
+                data-testid="item-button"
+              >
+                <Scale className="text-container clear">
+                  <img
+                    className="item-icon"
+                    src={getIconPath(category.name)}
+                    alt="Item icon"
+                  />
+                  <div className="item-text axiforma-medium-blue-18px">
+                    {' '}
+                    {category.name}{' '}
+                  </div>
+                </Scale>
+              </Button>
+            </Link>
           ))
       ),
     [categories, keyword]

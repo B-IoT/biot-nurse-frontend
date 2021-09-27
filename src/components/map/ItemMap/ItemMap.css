@@ -19,8 +19,6 @@
 }
 
 .map {
-  -webkit-border-radius: 75px;
-  border-radius: 75px;
   z-index: 0;
   overflow: hidden;
   position: absolute;
@@ -28,7 +26,6 @@
 
 .blurred-edges {
   border-color: var(--background);
-  border-radius: 75px;
   border-width: 15px;
   border-style: solid;
 
@@ -40,7 +37,6 @@
 
 .mask-edges {
   border-color: var(--background);
-  border-radius: 70px;
   border-width: 10px;
   border-style: solid;
 
@@ -51,8 +47,6 @@
 }
 
 .map-mask {
-  -webkit-border-radius: 70px;
-  border-radius: 70px;
   z-index: 0;
   width: 100%;
   height: 100%;
@@ -64,7 +58,6 @@
 }
 
 .map-shadow {
-  border-radius: 75px;
   filter: blur(7px);
   border: 20px solid var(--darker-shadow);
   position: absolute;
@@ -75,7 +68,6 @@
 }
 
 .map-light {
-  border-radius: 75px;
   filter: blur(7px);
   border: 20px solid var(--lighter-light);
   position: absolute;
@@ -86,7 +78,6 @@
 }
 
 .map-ambient {
-  border-radius: 75px;
   filter: blur(7px);
   border: 20px solid var(--shadow);
   position: absolute;
@@ -99,31 +90,24 @@
   align-items: center;
   justify-content: center;
   filter: blur(4px);
-  border-radius: 75px;
   width: 100%;
   height: 100%;
   position: absolute;
 }
 
 .map-control-right {
-  width: 125px;
-  height: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   flex-direction: column;
-  margin-right: 10px;
   padding-top: 30px;
 }
 
 .map-control-left {
-  width: 125px;
-  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  margin-right: 10px;
   padding-top: 30px;
 }
 

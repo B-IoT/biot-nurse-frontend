@@ -5,6 +5,11 @@
   flex-direction: column;
 }
 
+.back-button {
+  position: absolute;
+  left: 5%;
+}
+
 .map-title {
   margin-top: 10px;
 }

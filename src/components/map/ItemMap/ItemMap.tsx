@@ -22,7 +22,8 @@ import epfl2 from '../../../img/EPFL2.png';
 import jura from '../../../img/jura0.png';
 
 import mapboxgl from 'mapbox-gl';
-import MapLayer from '../MapLayer/MapLayer'; // @ts-ignore
+import MapLayer from '../MapLayer/MapLayer';
+import Container from '../../button/Container/Container'; // @ts-ignore
 // eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require('worker-loader!../../../../node_modules/mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
@@ -134,18 +135,6 @@ export default function ItemMap(props: ItemMapProps) {
 
   return (
     <div className="map-total-container">
-      <div className="map-control-left">
-        <RoundButton
-          iconPath={'navbarIcons/floorUp.svg'}
-          onClickHandler={() => setFloor(floor + 1)}
-        />
-        <RoundInput input={floor} setInput={setFloor} />
-        <RoundButton
-          iconPath={'navbarIcons/floorDown.svg'}
-          onClickHandler={() => setFloor(floor - 1)}
-        />
-      </div>
-
       <div className="map-container">
         <div className="map-mask">
           <div
@@ -222,6 +211,7 @@ export default function ItemMap(props: ItemMapProps) {
           <div className="mask-edges clear" />
           <div className="blurred-edges clear" />
         </div>
+
         <div className="map-blur clear">
           <div className="map-mask clear">
             <div className="map-ambient clear" />
@@ -229,24 +219,50 @@ export default function ItemMap(props: ItemMapProps) {
             <div className="map-light clear" />
           </div>
         </div>
-      </div>
 
-      <div className="map-control-right">
-        {userFetched && (
-          <RoundButton
-            iconPath={'navbarIcons/center.svg'}
-            onClickHandler={centerHandler}
-          />
-        )}
-        {userFetched && <div className="separator" />}
-        <RoundButton
-          iconPath={'navbarIcons/zoom.svg'}
-          onClickHandler={zoomHandler}
-        />
-        <RoundButton
-          iconPath={'navbarIcons/dezoom.svg'}
-          onClickHandler={dezoomHandler}
-        />
+        <Container
+          width={125}
+          height={''}
+          borderRadius={50}
+          style={{ left: 0 }}
+        >
+          <div className="map-control-left">
+            <RoundButton
+              iconPath={'navbarIcons/floorUp.svg'}
+              onClick={() => setFloor(floor + 1)}
+            />
+            <RoundInput input={floor} setInput={setFloor} />
+            <RoundButton
+              iconPath={'navbarIcons/floorDown.svg'}
+              onClick={() => setFloor(floor - 1)}
+            />
+          </div>
+        </Container>
+
+        <Container
+          width={125}
+          height={''}
+          borderRadius={50}
+          style={{ right: 0 }}
+        >
+          <div className="map-control-right">
+            {userFetched && (
+              <RoundButton
+                iconPath={'navbarIcons/center.svg'}
+                onClick={centerHandler}
+              />
+            )}
+            {userFetched && <div className="separator" />}
+            <RoundButton
+              iconPath={'navbarIcons/zoom.svg'}
+              onClick={zoomHandler}
+            />
+            <RoundButton
+              iconPath={'navbarIcons/dezoom.svg'}
+              onClick={dezoomHandler}
+            />
+          </div>
+        </Container>
       </div>
     </div>
   );

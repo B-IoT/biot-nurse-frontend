@@ -19,3 +19,34 @@
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50px;
+  height: 210px;
+  width: 210px;
+  margin: 20px;
+  transform: scale(0.9);
+  -webkit-transform-origin: center;
+}
+
+.text-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  will-change: transform;
+}
+
+.item-icon {
+  position: relative;
+  height: 80px;
+}
+
+.item-text {
+  position: relative;
+  text-align: center;
+  margin-top: 20px;
+}

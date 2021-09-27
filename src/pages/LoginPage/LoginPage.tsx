@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import './LoginPage.css';
 import Input from '../../components/input/Input/Input';
@@ -7,6 +7,7 @@ import Button from '../../components/button/Button/Button';
 import { authenticate } from '../../api/api';
 import { useHistory } from 'react-router-dom';
 import { SEARCH_PATH } from '../../App';
+import { Scale } from '../../utils/animations';
 
 /**
  * The login page.
@@ -53,12 +54,21 @@ export default function LoginPage() {
           {'Identifiant ou mot de passe incorrect.'}
         </div>
       )}
+
       <Button
-        text="Connexion"
         onClick={handleSignIn}
-        width={200}
+        width={180}
+        height={75}
+        borderRadius={37}
         style={{ marginTop: 35 }}
-      />
+      >
+        <Scale
+          className="button-text axiforma-medium-blue-22px"
+          style={{ width: 180 }}
+        >
+          {'Connexion'}
+        </Scale>
+      </Button>
     </div>
   );
 }

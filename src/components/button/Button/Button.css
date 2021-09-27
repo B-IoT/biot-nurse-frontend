@@ -2,9 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 37px;
-  height: 75px;
-  width: 180px;
   cursor: pointer;
 }
 
@@ -14,36 +11,16 @@
     var(--darker-shadow) 13.29%,
     var(--lighter-light) 84.76%
   );
-  border-radius: 37px;
   filter: blur(6px);
   position: absolute;
-  height: 75px;
-  width: 180px;
   will-change: opacity;
 }
 
-.button-shadow {
-  box-shadow: 10px 10px 10px var(--darker-shadow);
-  border-radius: 37px;
-  filter: blur(4px);
+.button-unpressed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  height: 75px;
-  width: 180px;
-  will-change: opacity;
-}
-
-.button-light {
-  background: linear-gradient(
-    157.37deg,
-    var(--light) 13.29%,
-    var(--shadow) 84.76%
-  );
-  box-shadow: -10px -10px 10px var(--lighter-light);
-  border-radius: 37px;
-  filter: blur(4px);
-  position: absolute;
-  height: 75px;
-  width: 180px;
   will-change: opacity;
 }
 
