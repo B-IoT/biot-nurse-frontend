@@ -18,6 +18,8 @@ export default function RoundButton(props: RoundButtonProps) {
       width={75}
       height={75}
       borderRadius={75}
+      shadowOffset={10}
+      surfaceGradient={true}
       style={{ marginBottom: 30 }}
     >
       <Scale className="icon-container clear">

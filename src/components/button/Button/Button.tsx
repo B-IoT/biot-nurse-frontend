@@ -9,7 +9,16 @@ import Container from '../Container/Container';
  * Customizable button that executes a given function when clicked.
  */
 export default function Button(props: ButtonProps) {
-  const { onClick, width, height, borderRadius, style, children } = props;
+  const {
+    onClick,
+    width,
+    height,
+    borderRadius,
+    shadowOffset,
+    surfaceGradient,
+    style,
+    children,
+  } = props;
 
   return (
     <Hover
@@ -27,6 +36,8 @@ export default function Button(props: ButtonProps) {
           height={height}
           style={{}}
           borderRadius={borderRadius}
+          shadowOffset={shadowOffset}
+          surfaceGradient={surfaceGradient}
           children={children}
         />
       </FadeOut>

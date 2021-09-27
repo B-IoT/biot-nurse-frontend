@@ -12,87 +12,15 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  left: 0;
   width: 100%;
   height: 100%;
   position: relative;
 }
 
 .map {
-  z-index: 0;
-  overflow: hidden;
-  position: absolute;
-}
-
-.blurred-edges {
-  border-color: var(--background);
-  border-width: 15px;
-  border-style: solid;
-
-  filter: blur(4px);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.mask-edges {
-  border-color: var(--background);
-  border-width: 10px;
-  border-style: solid;
-
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 99;
-}
-
-.map-mask {
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: absolute;
-}
-
-.map-shadow {
-  filter: blur(7px);
-  border: 20px solid var(--darker-shadow);
-  position: absolute;
-  width: 120%;
-  height: 120%;
   top: 0;
-  left: 0;
-}
-
-.map-light {
-  filter: blur(7px);
-  border: 20px solid var(--lighter-light);
   position: absolute;
-  width: 120%;
-  height: 120%;
-  bottom: 0;
-  right: 0;
-}
-
-.map-ambient {
-  filter: blur(7px);
-  border: 20px solid var(--shadow);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.map-blur {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: blur(4px);
-  width: 100%;
-  height: 100%;
-  position: absolute;
+  z-index: 0;
 }
 
 .map-control-right {

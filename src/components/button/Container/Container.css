@@ -19,3 +19,11 @@
   height: 100%;
   width: 100%;
 }
+
+.neumorphic-ambiant {
+  filter: blur(2px);
+  background: var(--background);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}

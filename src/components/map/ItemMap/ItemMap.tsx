@@ -134,136 +134,124 @@ export default function ItemMap(props: ItemMapProps) {
   );
 
   return (
-    <div className="map-total-container">
-      <div className="map-container">
-        <div className="map-mask">
-          <div
-            className={itemsFetched ? 'map' : 'hidden'}
-            data-testid={itemsFetched ? 'map' : 'hidden'}
-          >
-            <ReactMapGl
-              {...viewport}
-              width="90vw"
-              height="100vh"
-              onViewportChange={setViewport}
-              mapStyle={
-                'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g'
-              }
-            >
-              <MapLayer
-                id="source"
-                floor={floor}
-                opacity={1}
-                floors={{ 1: laSource1, 2: laSource2 }}
-                coordinates={[
-                  [6.6221621976, 46.5298994022],
-                  [6.623383043, 46.5294103301],
-                  [6.6229855116, 46.5289365281],
-                  [6.6217625055, 46.5294240453],
-                ]}
-              />
-              <MapLayer
-                id="forge"
-                floor={floor}
-                opacity={1}
-                floors={{ 0: laForge0, 1: laForge1 }}
-                coordinates={[
-                  [6.562626893173264, 46.517607277539106],
-                  [6.562863671772686, 46.517609132035275],
-                  [6.562870180322819, 46.51710903432505],
-                  [6.562632991299888, 46.51710791825781],
-                ]}
-              />
-              <MapLayer
-                id="epfl"
-                floor={floor}
-                opacity={1}
-                floors={{ 0: epfl0, 1: epfl1, 2: epfl2 }}
-                coordinates={[
-                  [6.568616030085856, 46.52101710040429],
-                  [6.571625357306832, 46.521041126066834],
-                  [6.571643373393564, 46.51999620572547],
-                  [6.568631644262474, 46.51997530035722],
-                ]}
-              />
-              <MapLayer
-                id="jura"
-                floor={floor}
-                opacity={1}
-                floors={{ 0: jura }}
-                coordinates={[
-                  [7.338341717516884, 47.36915896661172],
-                  [7.3388349106114275, 47.36921815171731],
-                  [7.338952851681915, 47.36876905735807],
-                  [7.338453313289029, 47.36870640756432],
-                ]}
-              />
-              {markers}
-              <UserMarker
-                userLon={userLon}
-                userLat={userLat}
-                setUserLon={setUserLon}
-                setUserLat={setUserLat}
-                setUserFetched={setUserFetched}
-              />
-            </ReactMapGl>
-          </div>
-          <div className="mask-edges clear" />
-          <div className="blurred-edges clear" />
-        </div>
-
-        <div className="map-blur clear">
-          <div className="map-mask clear">
-            <div className="map-ambient clear" />
-            <div className="map-shadow clear" />
-            <div className="map-light clear" />
-          </div>
-        </div>
-
-        <Container
-          width={125}
-          height={''}
-          borderRadius={50}
-          style={{ left: 0 }}
+    <div className="map-container">
+      <div
+        className={itemsFetched ? 'map' : 'hidden'}
+        data-testid={itemsFetched ? 'map' : 'hidden'}
+      >
+        <ReactMapGl
+          {...viewport}
+          width="100vw"
+          height="calc(100vh - 175px + 50px)"
+          onViewportChange={setViewport}
+          mapStyle={'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g'}
         >
-          <div className="map-control-left">
-            <RoundButton
-              iconPath={'navbarIcons/floorUp.svg'}
-              onClick={() => setFloor(floor + 1)}
-            />
-            <RoundInput input={floor} setInput={setFloor} />
-            <RoundButton
-              iconPath={'navbarIcons/floorDown.svg'}
-              onClick={() => setFloor(floor - 1)}
-            />
-          </div>
-        </Container>
-
-        <Container
-          width={125}
-          height={''}
-          borderRadius={50}
-          style={{ right: 0 }}
-        >
-          <div className="map-control-right">
-            {userFetched && (
-              <RoundButton
-                iconPath={'navbarIcons/center.svg'}
-                onClick={centerHandler}
-              />
-            )}
-            {userFetched && <div className="separator" />}
-            <RoundButton
-              iconPath={'navbarIcons/zoom.svg'}
-              onClick={zoomHandler}
-            />
-            <RoundButton
-              iconPath={'navbarIcons/dezoom.svg'}
-              onClick={dezoomHandler}
-            />
-          </div>
-        </Container>
+          <MapLayer
+            id="source"
+            floor={floor}
+            opacity={1}
+            floors={{ 1: laSource1, 2: laSource2 }}
+            coordinates={[
+              [6.6221621976, 46.5298994022],
+              [6.623383043, 46.5294103301],
+              [6.6229855116, 46.5289365281],
+              [6.6217625055, 46.5294240453],
+            ]}
+          />
+          <MapLayer
+            id="forge"
+            floor={floor}
+            opacity={1}
+            floors={{ 0: laForge0, 1: laForge1 }}
+            coordinates={[
+              [6.562626893173264, 46.517607277539106],
+              [6.562863671772686, 46.517609132035275],
+              [6.562870180322819, 46.51710903432505],
+              [6.562632991299888, 46.51710791825781],
+            ]}
+          />
+          <MapLayer
+            id="epfl"
+            floor={floor}
+            opacity={1}
+            floors={{ 0: epfl0, 1: epfl1, 2: epfl2 }}
+            coordinates={[
+              [6.568616030085856, 46.52101710040429],
+              [6.571625357306832, 46.521041126066834],
+              [6.571643373393564, 46.51999620572547],
+              [6.568631644262474, 46.51997530035722],
+            ]}
+          />
+          <MapLayer
+            id="jura"
+            floor={floor}
+            opacity={1}
+            floors={{ 0: jura }}
+            coordinates={[
+              [7.338341717516884, 47.36915896661172],
+              [7.3388349106114275, 47.36921815171731],
+              [7.338952851681915, 47.36876905735807],
+              [7.338453313289029, 47.36870640756432],
+            ]}
+          />
+          {markers}
+          <UserMarker
+            userLon={userLon}
+            userLat={userLat}
+            setUserLon={setUserLon}
+            setUserLat={setUserLat}
+            setUserFetched={setUserFetched}
+          />
+        </ReactMapGl>
       </div>
+
+      <Container
+        width={125}
+        height={''}
+        borderRadius={50}
+        shadowOffset={10}
+        surfaceGradient={false}
+        style={{ left: '3%' }}
+      >
+        <div className="map-control-left">
+          <RoundButton
+            iconPath={'navbarIcons/floorUp.svg'}
+            onClick={() => setFloor(floor + 1)}
+          />
+          <RoundInput input={floor} setInput={setFloor} />
+          <RoundButton
+            iconPath={'navbarIcons/floorDown.svg'}
+            onClick={() => setFloor(floor - 1)}
+          />
+        </div>
+      </Container>
+
+      <Container
+        width={125}
+        height={''}
+        borderRadius={50}
+        shadowOffset={10}
+        surfaceGradient={false}
+        style={{ right: '3%' }}
+      >
+        <div className="map-control-right">
+          {userFetched && (
+            <RoundButton
+              iconPath={'navbarIcons/center.svg'}
+              onClick={centerHandler}
+            />
+          )}
+          {userFetched && <div className="separator" />}
+          <RoundButton
+            iconPath={'navbarIcons/zoom.svg'}
+            onClick={zoomHandler}
+          />
+          <RoundButton
+            iconPath={'navbarIcons/dezoom.svg'}
+            onClick={dezoomHandler}
+          />
+        </div>
+      </Container>
     </div>
   );
 }

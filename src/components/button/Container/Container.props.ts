@@ -17,6 +17,16 @@ export interface ContainerProps {
   borderRadius: number | string;
 
   /**
+   * The offset of the neumorphic shadow
+   */
+  shadowOffset: number;
+
+  /**
+   * Boolean that toggles the surface gradient
+   */
+  surfaceGradient: boolean;
+
+  /**
    * The style of the button, used to overwrite or add new css properties
    */
   style: {};

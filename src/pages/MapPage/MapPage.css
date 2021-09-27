@@ -12,23 +12,23 @@
 
 .map-title {
   margin-top: 10px;
+  z-index: 1000;
 }
 
 .top-container {
   align-items: center;
   justify-content: center;
   display: flex;
-  position: fixed;
+  position: relative;
   height: 175px;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  z-index: 999;
 }
 
-.bottom-container {
-  position: fixed;
-  height: 5vh;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.item-map-container {
+  position: absolute;
+  width: 100%;
+  top: 175px;
+  height: calc(100vh - 175px);
+  overflow: hidden;
 }

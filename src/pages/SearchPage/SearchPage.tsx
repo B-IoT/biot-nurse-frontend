@@ -47,6 +47,8 @@ export default function SearchPage() {
                 width={210}
                 height={210}
                 borderRadius={50}
+                shadowOffset={20}
+                surfaceGradient={true}
                 style={{}}
                 data-testid="item-button"
               >

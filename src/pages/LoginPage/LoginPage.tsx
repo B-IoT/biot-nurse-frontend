@@ -60,6 +60,8 @@ export default function LoginPage() {
         width={180}
         height={75}
         borderRadius={37}
+        shadowOffset={10}
+        surfaceGradient={true}
         style={{ marginTop: 35 }}
       >
         <Scale
