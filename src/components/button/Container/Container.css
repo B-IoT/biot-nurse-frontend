@@ -2,16 +2,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: absolute;
-}
-
-.neumorphic-div {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.neumorphic-ambiant {
-  background: var(--background);
+  overflow: visible;
 }

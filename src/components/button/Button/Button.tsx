@@ -21,6 +21,9 @@ export default function Button(props: ButtonProps) {
     children,
   } = props;
 
+  const stringWidth = width.constructor === String ? width : '' + width + 'px'
+  const stringHeight = height.constructor === String ? height : '' + height + 'px'
+
   return (
     <Hover
       className="button"
@@ -30,8 +33,8 @@ export default function Button(props: ButtonProps) {
       <FadeIn
         className="button-pressed"
         style={{
-          width: width,
-          height: height,
+          width: 'calc(' + stringWidth + ' + ' + shadowOffset + 'px)',
+          height: 'calc(' + stringHeight + ' + ' + shadowOffset + 'px)',
           borderRadius: borderRadius,
           filter: 'blur(' + 2 * blur + 'px)',
         }}
