@@ -47,7 +47,7 @@ export default function SearchPage() {
                 width={160}
                 height={160}
                 borderRadius={30}
-                blur={4}
+                blur={5}
                 shadowOffset={15}
                 surfaceGradient={true}
                 style={{}}
