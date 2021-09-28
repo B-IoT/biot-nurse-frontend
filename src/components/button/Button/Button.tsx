@@ -21,13 +21,19 @@ export default function Button(props: ButtonProps) {
     children,
   } = props;
 
-  const stringWidth = width.constructor === String ? width : '' + width + 'px';
-  const stringHeight =
-    height.constructor === String ? height : '' + height + 'px';
+  function parseLength(length: number | string) {
+    return length !== undefined && length.constructor === String
+      ? width
+      : '' + width + 'px';
+  }
+
+  const stringWidth = parseLength(width);
+  const stringHeight = parseLength(height);
 
   return (
     <Hover
       className="button"
+      data-testid="button"
       style={Object.assign({}, { width: width, height: height }, style)}
       onClick={onClick}
     >

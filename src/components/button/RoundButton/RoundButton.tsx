@@ -13,7 +13,6 @@ export default function RoundButton(props: RoundButtonProps) {
 
   return (
     <Button
-      data-testid="round-button"
       onClick={onClick}
       width={60}
       height={60}

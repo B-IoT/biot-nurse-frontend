@@ -37,7 +37,7 @@ export default function SearchPage() {
           )
           .map((category) => (
             <Link
-              key={category.id}
+              key={category.name}
               className="item-container"
               to={{ pathname: MAP_PATH, state: { category } }}
               style={{ textDecoration: 'none' }}

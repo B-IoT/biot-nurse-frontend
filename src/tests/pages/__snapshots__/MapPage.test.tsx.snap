@@ -7,258 +7,703 @@ exports[`Map page matches snapshot 1`] = `
   <div
     className="top-container"
   >
-    <a
-      href="/"
-      onClick={[Function]}
-    >
-      <div
-        className="back-button css-1i20ack-Hover e128ygwg0"
-      >
-        <div
-          className="back-pressed css-1gvt6rq-FadeIn e128ygwg3"
-        />
-        <div
-          className="back-shadow css-1ypgtc4-FadeOut e128ygwg2"
-        />
-        <div
-          className="back-light css-1ypgtc4-FadeOut e128ygwg2"
-        />
-        <div
-          className="back-text axiforma-book-normal-blue-30px css-zcw12y-Scale e128ygwg1"
-        >
-          &lt; Retour
-        </div>
-      </div>
-    </a>
-    <h1
-      className="map-title axiforma-semi-bold-blue-50px"
-    >
-      Voici les Lits à proximité
-    </h1>
-  </div>
-  <div
-    className="map-total-container"
-  >
     <div
-      className="map-control-left"
+      className="top-container-blur"
     >
       <div
-        className="round-container css-1i20ack-Hover e128ygwg0"
-      >
-        <div
-          className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
-        />
-        <button
-          className="round-button-container"
-          data-testid="round-button"
-          onClick={[Function]}
-        >
-          <div
-            className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
-          >
-            <div
-              className="round-light"
-            />
-            <div
-              className="round-shadow"
-            />
-          </div>
-        </button>
-        <div
-          className="icon-container clear css-zcw12y-Scale e128ygwg1"
-        >
-          <img
-            alt="Button icon"
-            className="round-icon"
-            src="navbarIcons/floorUp.svg"
-          />
-        </div>
-      </div>
+        className="top-container-shadow"
+      />
       <div
-        className="round-input"
-      >
-        <img
-          alt="Round input"
-          className="round-input-img"
-          src="roundInput.png"
-        />
-        <div>
-          <input
-            className="round-input-text axiforma-book-normal-blue-30px"
-            data-testid="round-input"
-            onChange={[Function]}
-            onKeyPress={[Function]}
-            value=""
-          />
-        </div>
-      </div>
-      <div
-        className="round-container css-1i20ack-Hover e128ygwg0"
-      >
-        <div
-          className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
-        />
-        <button
-          className="round-button-container"
-          data-testid="round-button"
-          onClick={[Function]}
-        >
-          <div
-            className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
-          >
-            <div
-              className="round-light"
-            />
-            <div
-              className="round-shadow"
-            />
-          </div>
-        </button>
-        <div
-          className="icon-container clear css-zcw12y-Scale e128ygwg1"
-        >
-          <img
-            alt="Button icon"
-            className="round-icon"
-            src="navbarIcons/floorDown.svg"
-          />
-        </div>
-      </div>
+        className="top-container-ambient"
+      />
     </div>
     <div
-      className="map-container"
+      className="back-button"
     >
-      <div
-        className="map-mask"
+      <a
+        href="/"
+        onClick={[Function]}
+        style={
+          Object {
+            "textDecoration": "none",
+          }
+        }
       >
         <div
-          className="hidden"
-          data-testid="hidden"
+          className="button css-1i20ack-Hover e128ygwg0"
+          data-testid="button"
+          onClick={[Function]}
+          style={
+            Object {
+              "height": 60,
+              "width": 120,
+            }
+          }
         >
           <div
+            className="button-pressed css-1gvt6rq-FadeIn e128ygwg3"
             style={
               Object {
-                "cursor": "grab",
-                "height": "100vh",
-                "position": "relative",
-                "width": "90vw",
+                "borderRadius": 50,
+                "filter": "blur(4px)",
+                "height": "calc(120px + 0.5*7px)",
+                "width": "calc(120px + 0.5*7px)",
               }
             }
+          />
+          <div
+            className="button-unpressed css-1ypgtc4-FadeOut e128ygwg2"
           >
             <div
+              className="neumorphic-container"
               style={
                 Object {
-                  "height": "100%",
-                  "position": "relative",
-                  "width": "100%",
+                  "height": 60,
+                  "width": 120,
                 }
               }
             >
               <div
-                className=""
+                className="neumorphic-div"
                 style={
                   Object {
-                    "height": "100%",
-                    "overflow": "hidden",
+                    "background": "var(--darker-shadow)",
+                    "borderRadius": 50,
+                    "filter": "blur(2px)",
+                    "height": "calc(100% + 7px)",
+                    "left": 0,
                     "position": "absolute",
-                    "visibility": "inherit",
+                    "top": 0,
+                    "width": "calc(100% + 7px)",
+                  }
+                }
+              />
+              <div
+                className="neumorphic-div"
+                style={
+                  Object {
+                    "background": "var(--lighter-light)",
+                    "borderRadius": 50,
+                    "bottom": 0,
+                    "filter": "blur(2px)",
+                    "height": "calc(100% + 7px)",
+                    "position": "absolute",
+                    "right": 0,
+                    "width": "calc(100% + 7px)",
+                  }
+                }
+              />
+              <div
+                className="neumorphic-div neumorphic-ambiant"
+                style={
+                  Object {
+                    "background": "linear-gradient(157.37deg, var(--light) 13.29%, var(--shadow) 84.76%)",
+                    "borderRadius": 50,
+                    "filter": "blur(2px)",
+                    "height": "100%",
+                    "position": "absolute",
                     "width": "100%",
                   }
                 }
               />
+              <div
+                className="back-text font-axiforma-book text-blue text-medium css-zcw12y-Scale e128ygwg1"
+              >
+                &lt; Retour
+              </div>
+            </div>
+          </div>
+          <div
+            className="back-text font-axiforma-book text-blue text-medium css-zcw12y-Scale e128ygwg1"
+          >
+            &lt; Retour
+          </div>
+        </div>
+      </a>
+    </div>
+    <img
+      alt="Item icon"
+      className="map-title-icon"
+      src="/itemIcons/Lit.svg"
+    />
+    <h1
+      className="font-axiforma-semi-bold text-blue text-title"
+    >
+      Lit
+    </h1>
+  </div>
+  <div
+    className="item-map-container"
+  >
+    <div
+      className="map-container"
+    >
+      <div
+        className="hidden"
+        data-testid="hidden"
+      >
+        <div
+          style={
+            Object {
+              "cursor": "grab",
+              "height": "calc(100vh - 125px + 30px)",
+              "position": "relative",
+              "width": "100vw",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "height": "100%",
+                "position": "relative",
+                "width": "100%",
+              }
+            }
+          >
+            <div
+              className=""
+              style={
+                Object {
+                  "height": "100%",
+                  "overflow": "hidden",
+                  "position": "absolute",
+                  "visibility": "inherit",
+                  "width": "100%",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="neumorphic-container"
+        style={
+          Object {
+            "height": "",
+            "left": "3%",
+            "width": 110,
+          }
+        }
+      >
+        <div
+          className="neumorphic-div"
+          style={
+            Object {
+              "background": "var(--darker-shadow)",
+              "borderRadius": 50,
+              "filter": "blur(2px)",
+              "height": "calc(100% + 5px)",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": "calc(100% + 5px)",
+            }
+          }
+        />
+        <div
+          className="neumorphic-div"
+          style={
+            Object {
+              "background": "var(--lighter-light)",
+              "borderRadius": 50,
+              "bottom": 0,
+              "filter": "blur(2px)",
+              "height": "calc(100% + 5px)",
+              "position": "absolute",
+              "right": 0,
+              "width": "calc(100% + 5px)",
+            }
+          }
+        />
+        <div
+          className="neumorphic-div neumorphic-ambiant"
+          style={
+            Object {
+              "background": "var(--background)",
+              "borderRadius": 50,
+              "filter": "blur(2px)",
+              "height": "100%",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        />
+        <div
+          className="map-control-left"
+        >
+          <div
+            className="button css-1i20ack-Hover e128ygwg0"
+            data-testid="button"
+            onClick={[Function]}
+            style={
+              Object {
+                "height": 60,
+                "marginBottom": 30,
+                "width": 60,
+              }
+            }
+          >
+            <div
+              className="button-pressed css-1gvt6rq-FadeIn e128ygwg3"
+              style={
+                Object {
+                  "borderRadius": 60,
+                  "filter": "blur(4px)",
+                  "height": "calc(60px + 0.5*5px)",
+                  "width": "calc(60px + 0.5*5px)",
+                }
+              }
+            />
+            <div
+              className="button-unpressed css-1ypgtc4-FadeOut e128ygwg2"
+            >
+              <div
+                className="neumorphic-container"
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 60,
+                  }
+                }
+              >
+                <div
+                  className="neumorphic-div"
+                  style={
+                    Object {
+                      "background": "var(--darker-shadow)",
+                      "borderRadius": 60,
+                      "filter": "blur(2px)",
+                      "height": "calc(100% + 5px)",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "calc(100% + 5px)",
+                    }
+                  }
+                />
+                <div
+                  className="neumorphic-div"
+                  style={
+                    Object {
+                      "background": "var(--lighter-light)",
+                      "borderRadius": 60,
+                      "bottom": 0,
+                      "filter": "blur(2px)",
+                      "height": "calc(100% + 5px)",
+                      "position": "absolute",
+                      "right": 0,
+                      "width": "calc(100% + 5px)",
+                    }
+                  }
+                />
+                <div
+                  className="neumorphic-div neumorphic-ambiant"
+                  style={
+                    Object {
+                      "background": "linear-gradient(157.37deg, var(--light) 13.29%, var(--shadow) 84.76%)",
+                      "borderRadius": 60,
+                      "filter": "blur(2px)",
+                      "height": "100%",
+                      "position": "absolute",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <div
+                  className="icon-container clear css-zcw12y-Scale e128ygwg1"
+                >
+                  <img
+                    alt="Button icon"
+                    className="round-icon"
+                    src="navbarIcons/floorUp.svg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="icon-container clear css-zcw12y-Scale e128ygwg1"
+            >
+              <img
+                alt="Button icon"
+                className="round-icon"
+                src="navbarIcons/floorUp.svg"
+              />
+            </div>
+          </div>
+          <div
+            className="round-input"
+          >
+            <img
+              alt="Round input"
+              className="round-input-img"
+              src="roundInput.png"
+            />
+            <div>
+              <input
+                className="round-input-text font-axiforma-semi-bold text-blue text-medium"
+                data-testid="round-input"
+                onChange={[Function]}
+                onKeyPress={[Function]}
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="button css-1i20ack-Hover e128ygwg0"
+            data-testid="button"
+            onClick={[Function]}
+            style={
+              Object {
+                "height": 60,
+                "marginBottom": 30,
+                "width": 60,
+              }
+            }
+          >
+            <div
+              className="button-pressed css-1gvt6rq-FadeIn e128ygwg3"
+              style={
+                Object {
+                  "borderRadius": 60,
+                  "filter": "blur(4px)",
+                  "height": "calc(60px + 0.5*5px)",
+                  "width": "calc(60px + 0.5*5px)",
+                }
+              }
+            />
+            <div
+              className="button-unpressed css-1ypgtc4-FadeOut e128ygwg2"
+            >
+              <div
+                className="neumorphic-container"
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 60,
+                  }
+                }
+              >
+                <div
+                  className="neumorphic-div"
+                  style={
+                    Object {
+                      "background": "var(--darker-shadow)",
+                      "borderRadius": 60,
+                      "filter": "blur(2px)",
+                      "height": "calc(100% + 5px)",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "calc(100% + 5px)",
+                    }
+                  }
+                />
+                <div
+                  className="neumorphic-div"
+                  style={
+                    Object {
+                      "background": "var(--lighter-light)",
+                      "borderRadius": 60,
+                      "bottom": 0,
+                      "filter": "blur(2px)",
+                      "height": "calc(100% + 5px)",
+                      "position": "absolute",
+                      "right": 0,
+                      "width": "calc(100% + 5px)",
+                    }
+                  }
+                />
+                <div
+                  className="neumorphic-div neumorphic-ambiant"
+                  style={
+                    Object {
+                      "background": "linear-gradient(157.37deg, var(--light) 13.29%, var(--shadow) 84.76%)",
+                      "borderRadius": 60,
+                      "filter": "blur(2px)",
+                      "height": "100%",
+                      "position": "absolute",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <div
+                  className="icon-container clear css-zcw12y-Scale e128ygwg1"
+                >
+                  <img
+                    alt="Button icon"
+                    className="round-icon"
+                    src="navbarIcons/floorDown.svg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="icon-container clear css-zcw12y-Scale e128ygwg1"
+            >
+              <img
+                alt="Button icon"
+                className="round-icon"
+                src="navbarIcons/floorDown.svg"
+              />
             </div>
           </div>
         </div>
-        <div
-          className="mask-edges clear"
-        />
-        <div
-          className="blurred-edges clear"
-        />
       </div>
       <div
-        className="map-blur clear"
+        className="neumorphic-container"
+        style={
+          Object {
+            "height": "",
+            "right": "3%",
+            "width": 110,
+          }
+        }
       >
         <div
-          className="map-mask clear"
-        >
-          <div
-            className="map-ambient clear"
-          />
-          <div
-            className="map-shadow clear"
-          />
-          <div
-            className="map-light clear"
-          />
-        </div>
-      </div>
-    </div>
-    <div
-      className="map-control-right"
-    >
-      <div
-        className="round-container css-1i20ack-Hover e128ygwg0"
-      >
-        <div
-          className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
+          className="neumorphic-div"
+          style={
+            Object {
+              "background": "var(--darker-shadow)",
+              "borderRadius": 50,
+              "filter": "blur(2px)",
+              "height": "calc(100% + 5px)",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": "calc(100% + 5px)",
+            }
+          }
         />
-        <button
-          className="round-button-container"
-          data-testid="round-button"
-          onClick={[Function]}
+        <div
+          className="neumorphic-div"
+          style={
+            Object {
+              "background": "var(--lighter-light)",
+              "borderRadius": 50,
+              "bottom": 0,
+              "filter": "blur(2px)",
+              "height": "calc(100% + 5px)",
+              "position": "absolute",
+              "right": 0,
+              "width": "calc(100% + 5px)",
+            }
+          }
+        />
+        <div
+          className="neumorphic-div neumorphic-ambiant"
+          style={
+            Object {
+              "background": "var(--background)",
+              "borderRadius": 50,
+              "filter": "blur(2px)",
+              "height": "100%",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        />
+        <div
+          className="map-control-right"
         >
           <div
-            className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
+            className="button css-1i20ack-Hover e128ygwg0"
+            data-testid="button"
+            onClick={[Function]}
+            style={
+              Object {
+                "height": 60,
+                "marginBottom": 30,
+                "width": 60,
+              }
+            }
           >
             <div
-              className="round-light"
+              className="button-pressed css-1gvt6rq-FadeIn e128ygwg3"
+              style={
+                Object {
+                  "borderRadius": 60,
+                  "filter": "blur(4px)",
+                  "height": "calc(60px + 0.5*5px)",
+                  "width": "calc(60px + 0.5*5px)",
+                }
+              }
             />
             <div
-              className="round-shadow"
-            />
+              className="button-unpressed css-1ypgtc4-FadeOut e128ygwg2"
+            >
+              <div
+                className="neumorphic-container"
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 60,
+                  }
+                }
+              >
+                <div
+                  className="neumorphic-div"
+                  style={
+                    Object {
+                      "background": "var(--darker-shadow)",
+                      "borderRadius": 60,
+                      "filter": "blur(2px)",
+                      "height": "calc(100% + 5px)",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "calc(100% + 5px)",
+                    }
+                  }
+                />
+                <div
+                  className="neumorphic-div"
+                  style={
+                    Object {
+                      "background": "var(--lighter-light)",
+                      "borderRadius": 60,
+                      "bottom": 0,
+                      "filter": "blur(2px)",
+                      "height": "calc(100% + 5px)",
+                      "position": "absolute",
+                      "right": 0,
+                      "width": "calc(100% + 5px)",
+                    }
+                  }
+                />
+                <div
+                  className="neumorphic-div neumorphic-ambiant"
+                  style={
+                    Object {
+                      "background": "linear-gradient(157.37deg, var(--light) 13.29%, var(--shadow) 84.76%)",
+                      "borderRadius": 60,
+                      "filter": "blur(2px)",
+                      "height": "100%",
+                      "position": "absolute",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <div
+                  className="icon-container clear css-zcw12y-Scale e128ygwg1"
+                >
+                  <img
+                    alt="Button icon"
+                    className="round-icon"
+                    src="navbarIcons/zoom.svg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="icon-container clear css-zcw12y-Scale e128ygwg1"
+            >
+              <img
+                alt="Button icon"
+                className="round-icon"
+                src="navbarIcons/zoom.svg"
+              />
+            </div>
           </div>
-        </button>
-        <div
-          className="icon-container clear css-zcw12y-Scale e128ygwg1"
-        >
-          <img
-            alt="Button icon"
-            className="round-icon"
-            src="navbarIcons/zoom.svg"
-          />
-        </div>
-      </div>
-      <div
-        className="round-container css-1i20ack-Hover e128ygwg0"
-      >
-        <div
-          className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
-        />
-        <button
-          className="round-button-container"
-          data-testid="round-button"
-          onClick={[Function]}
-        >
           <div
-            className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
+            className="button css-1i20ack-Hover e128ygwg0"
+            data-testid="button"
+            onClick={[Function]}
+            style={
+              Object {
+                "height": 60,
+                "marginBottom": 30,
+                "width": 60,
+              }
+            }
           >
             <div
-              className="round-light"
+              className="button-pressed css-1gvt6rq-FadeIn e128ygwg3"
+              style={
+                Object {
+                  "borderRadius": 60,
+                  "filter": "blur(4px)",
+                  "height": "calc(60px + 0.5*5px)",
+                  "width": "calc(60px + 0.5*5px)",
+                }
+              }
             />
             <div
-              className="round-shadow"
-            />
+              className="button-unpressed css-1ypgtc4-FadeOut e128ygwg2"
+            >
+              <div
+                className="neumorphic-container"
+                style={
+                  Object {
+                    "height": 60,
+                    "width": 60,
+                  }
+                }
+              >
+                <div
+                  className="neumorphic-div"
+                  style={
+                    Object {
+                      "background": "var(--darker-shadow)",
+                      "borderRadius": 60,
+                      "filter": "blur(2px)",
+                      "height": "calc(100% + 5px)",
+                      "left": 0,
+                      "position": "absolute",
+                      "top": 0,
+                      "width": "calc(100% + 5px)",
+                    }
+                  }
+                />
+                <div
+                  className="neumorphic-div"
+                  style={
+                    Object {
+                      "background": "var(--lighter-light)",
+                      "borderRadius": 60,
+                      "bottom": 0,
+                      "filter": "blur(2px)",
+                      "height": "calc(100% + 5px)",
+                      "position": "absolute",
+                      "right": 0,
+                      "width": "calc(100% + 5px)",
+                    }
+                  }
+                />
+                <div
+                  className="neumorphic-div neumorphic-ambiant"
+                  style={
+                    Object {
+                      "background": "linear-gradient(157.37deg, var(--light) 13.29%, var(--shadow) 84.76%)",
+                      "borderRadius": 60,
+                      "filter": "blur(2px)",
+                      "height": "100%",
+                      "position": "absolute",
+                      "width": "100%",
+                    }
+                  }
+                />
+                <div
+                  className="icon-container clear css-zcw12y-Scale e128ygwg1"
+                >
+                  <img
+                    alt="Button icon"
+                    className="round-icon"
+                    src="navbarIcons/dezoom.svg"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              className="icon-container clear css-zcw12y-Scale e128ygwg1"
+            >
+              <img
+                alt="Button icon"
+                className="round-icon"
+                src="navbarIcons/dezoom.svg"
+              />
+            </div>
           </div>
-        </button>
-        <div
-          className="icon-container clear css-zcw12y-Scale e128ygwg1"
-        >
-          <img
-            alt="Button icon"
-            className="round-icon"
-            src="navbarIcons/dezoom.svg"
-          />
         </div>
       </div>
     </div>

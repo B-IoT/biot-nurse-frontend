@@ -8,131 +8,133 @@ exports[`Login page matches snapshot 1`] = `
     href="https://www.b-iot.ch"
   >
     <img
-      alt="BIoT logo"
+      alt="BioT logo"
       className="login-logo"
-      src="logoColor.png"
+      src="logo.png"
     />
   </a>
   <div
     className="search-bar"
     style={
       Object {
-        "width": 350,
+        "width": 250,
       }
     }
   >
     <div
-      className="search-mask"
-      style={
-        Object {
-          "width": 350,
-        }
-      }
-    >
-      <div
-        className="search-shadow"
-        style={
-          Object {
-            "width": 450,
-          }
-        }
-      />
-      <div
-        className="search-light"
-        style={
-          Object {
-            "width": 450,
-          }
-        }
-      />
-    </div>
-    <div
       className="search-blur"
       style={
         Object {
-          "width": 355,
+          "width": 260,
         }
       }
     >
-      <input
-        className="search-text axiforma-light-blue-21px"
-        data-testid="input"
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        placeholder="Nom d'utilisateur"
+      <div
+        className="search-mask"
         style={
           Object {
-            "width": 275,
+            "width": 250,
           }
         }
-        type=""
-      />
+      >
+        <div
+          className="search-shadow"
+          style={
+            Object {
+              "width": 300,
+            }
+          }
+        />
+        <div
+          className="search-light"
+          style={
+            Object {
+              "width": 300,
+            }
+          }
+        />
+      </div>
     </div>
+    <input
+      className="search-text font-axiforma-light text-blue text-small"
+      data-testid="input"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Nom d'utilisateur"
+      style={
+        Object {
+          "width": 200,
+        }
+      }
+      type=""
+    />
   </div>
   <div
     className="search-bar"
     style={
       Object {
         "marginTop": 15,
-        "width": 350,
+        "width": 250,
       }
     }
   >
     <div
-      className="search-mask"
-      style={
-        Object {
-          "width": 350,
-        }
-      }
-    >
-      <div
-        className="search-shadow"
-        style={
-          Object {
-            "width": 450,
-          }
-        }
-      />
-      <div
-        className="search-light"
-        style={
-          Object {
-            "width": 450,
-          }
-        }
-      />
-    </div>
-    <div
       className="search-blur"
       style={
         Object {
-          "width": 355,
+          "width": 260,
         }
       }
     >
-      <input
-        className="search-text axiforma-light-blue-21px"
-        data-testid="input"
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        placeholder="Mot de passe"
+      <div
+        className="search-mask"
         style={
           Object {
-            "width": 275,
+            "width": 250,
           }
         }
-        type="password"
-      />
+      >
+        <div
+          className="search-shadow"
+          style={
+            Object {
+              "width": 300,
+            }
+          }
+        />
+        <div
+          className="search-light"
+          style={
+            Object {
+              "width": 300,
+            }
+          }
+        />
+      </div>
     </div>
+    <input
+      className="search-text font-axiforma-light text-blue text-small"
+      data-testid="input"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Mot de passe"
+      style={
+        Object {
+          "width": 200,
+        }
+      }
+      type="password"
+    />
   </div>
   <div
     className="button css-1i20ack-Hover e128ygwg0"
+    data-testid="button"
     onClick={[Function]}
     style={
       Object {
+        "height": 50,
         "marginTop": 35,
-        "width": 200,
+        "width": 150,
       }
     }
   >
@@ -140,31 +142,85 @@ exports[`Login page matches snapshot 1`] = `
       className="button-pressed css-1gvt6rq-FadeIn e128ygwg3"
       style={
         Object {
-          "width": 200,
+          "borderRadius": 50,
+          "filter": "blur(4px)",
+          "height": "calc(150px + 0.5*8px)",
+          "width": "calc(150px + 0.5*8px)",
         }
       }
     />
     <div
-      className="button-shadow css-1ypgtc4-FadeOut e128ygwg2"
-      style={
-        Object {
-          "width": 200,
+      className="button-unpressed css-1ypgtc4-FadeOut e128ygwg2"
+    >
+      <div
+        className="neumorphic-container"
+        style={
+          Object {
+            "height": 50,
+            "width": 150,
+          }
         }
-      }
-    />
+      >
+        <div
+          className="neumorphic-div"
+          style={
+            Object {
+              "background": "var(--darker-shadow)",
+              "borderRadius": 50,
+              "filter": "blur(2px)",
+              "height": "calc(100% + 8px)",
+              "left": 0,
+              "position": "absolute",
+              "top": 0,
+              "width": "calc(100% + 8px)",
+            }
+          }
+        />
+        <div
+          className="neumorphic-div"
+          style={
+            Object {
+              "background": "var(--lighter-light)",
+              "borderRadius": 50,
+              "bottom": 0,
+              "filter": "blur(2px)",
+              "height": "calc(100% + 8px)",
+              "position": "absolute",
+              "right": 0,
+              "width": "calc(100% + 8px)",
+            }
+          }
+        />
+        <div
+          className="neumorphic-div neumorphic-ambiant"
+          style={
+            Object {
+              "background": "linear-gradient(157.37deg, var(--light) 13.29%, var(--shadow) 84.76%)",
+              "borderRadius": 50,
+              "filter": "blur(2px)",
+              "height": "100%",
+              "position": "absolute",
+              "width": "100%",
+            }
+          }
+        />
+        <div
+          className="button-text font-axiforma-medium text-blue text-small css-zcw12y-Scale e128ygwg1"
+          style={
+            Object {
+              "width": 180,
+            }
+          }
+        >
+          Connexion
+        </div>
+      </div>
+    </div>
     <div
-      className="button-light css-1ypgtc4-FadeOut e128ygwg2"
+      className="button-text font-axiforma-medium text-blue text-small css-zcw12y-Scale e128ygwg1"
       style={
         Object {
-          "width": 200,
-        }
-      }
-    />
-    <div
-      className="button-text axiforma-medium-blue-22px css-zcw12y-Scale e128ygwg1"
-      style={
-        Object {
-          "width": 200,
+          "width": 180,
         }
       }
     >

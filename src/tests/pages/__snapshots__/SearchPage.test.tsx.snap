@@ -5,7 +5,7 @@ exports[`Search page matches snapshot 1`] = `
   className="search-page"
 >
   <h1
-    className="search-title axiforma-bold-blue-70px"
+    className="search-title font-axiforma-bold text-blue text-title"
   >
     Que cherchez-vous ?
   </h1>
@@ -13,114 +13,156 @@ exports[`Search page matches snapshot 1`] = `
     className="search-bar"
     style={
       Object {
-        "marginTop": 50,
-        "width": 550,
+        "marginTop": 25,
+        "width": 300,
       }
     }
   >
     <div
-      className="search-mask"
-      style={
-        Object {
-          "width": 550,
-        }
-      }
-    >
-      <div
-        className="search-shadow"
-        style={
-          Object {
-            "width": 650,
-          }
-        }
-      />
-      <div
-        className="search-light"
-        style={
-          Object {
-            "width": 650,
-          }
-        }
-      />
-    </div>
-    <div
       className="search-blur"
       style={
         Object {
-          "width": 555,
+          "width": 310,
         }
       }
     >
-      <input
-        className="search-text axiforma-light-blue-21px"
-        data-testid="input"
-        onChange={[Function]}
-        onKeyPress={[Function]}
-        placeholder="Rechercher"
+      <div
+        className="search-mask"
         style={
           Object {
-            "width": 475,
+            "width": 300,
           }
         }
-        type=""
-      />
+      >
+        <div
+          className="search-shadow"
+          style={
+            Object {
+              "width": 350,
+            }
+          }
+        />
+        <div
+          className="search-light"
+          style={
+            Object {
+              "width": 350,
+            }
+          }
+        />
+      </div>
     </div>
+    <input
+      className="search-text font-axiforma-light text-blue text-small"
+      data-testid="input"
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Rechercher"
+      style={
+        Object {
+          "width": 250,
+        }
+      }
+      type=""
+    />
   </div>
   <div
     className="result-grid"
   >
-    <div
-      className="item-container css-1i20ack-Hover e128ygwg0"
-    >
-      <div
-        className="item-pressed css-1gvt6rq-FadeIn e128ygwg3"
-      />
-      <div
-        className="button-container css-1ypgtc4-FadeOut e128ygwg2"
-      >
-        <div
-          className="item-light"
-        />
-        <div
-          className="item-shadow"
-        />
-      </div>
-      <div
-        className="text-container css-zcw12y-Scale e128ygwg1"
-      >
-        <div
-          className="placeholder-text axiforma-semi-bold-spindle-120px"
-        >
-          ...
-        </div>
-      </div>
-    </div>
+    <div />
   </div>
   <div
     className="log-out"
   >
     <div
-      className="round-container css-1i20ack-Hover e128ygwg0"
+      className="button css-1i20ack-Hover e128ygwg0"
+      data-testid="button"
+      onClick={[Function]}
+      style={
+        Object {
+          "height": 60,
+          "marginBottom": 30,
+          "width": 60,
+        }
+      }
     >
       <div
-        className="round-pressed css-1gvt6rq-FadeIn e128ygwg3"
+        className="button-pressed css-1gvt6rq-FadeIn e128ygwg3"
+        style={
+          Object {
+            "borderRadius": 60,
+            "filter": "blur(4px)",
+            "height": "calc(60px + 0.5*5px)",
+            "width": "calc(60px + 0.5*5px)",
+          }
+        }
       />
-      <button
-        className="round-button-container"
-        data-testid="round-button"
-        onClick={[Function]}
+      <div
+        className="button-unpressed css-1ypgtc4-FadeOut e128ygwg2"
       >
         <div
-          className="round-button-container css-1ypgtc4-FadeOut e128ygwg2"
+          className="neumorphic-container"
+          style={
+            Object {
+              "height": 60,
+              "width": 60,
+            }
+          }
         >
           <div
-            className="round-light"
+            className="neumorphic-div"
+            style={
+              Object {
+                "background": "var(--darker-shadow)",
+                "borderRadius": 60,
+                "filter": "blur(2px)",
+                "height": "calc(100% + 5px)",
+                "left": 0,
+                "position": "absolute",
+                "top": 0,
+                "width": "calc(100% + 5px)",
+              }
+            }
           />
           <div
-            className="round-shadow"
+            className="neumorphic-div"
+            style={
+              Object {
+                "background": "var(--lighter-light)",
+                "borderRadius": 60,
+                "bottom": 0,
+                "filter": "blur(2px)",
+                "height": "calc(100% + 5px)",
+                "position": "absolute",
+                "right": 0,
+                "width": "calc(100% + 5px)",
+              }
+            }
           />
+          <div
+            className="neumorphic-div neumorphic-ambiant"
+            style={
+              Object {
+                "background": "linear-gradient(157.37deg, var(--light) 13.29%, var(--shadow) 84.76%)",
+                "borderRadius": 60,
+                "filter": "blur(2px)",
+                "height": "100%",
+                "position": "absolute",
+                "width": "100%",
+              }
+            }
+          />
+          <div
+            className="icon-container clear css-zcw12y-Scale e128ygwg1"
+          >
+            <img
+              alt="Button icon"
+              className="round-icon"
+              src="navbarIcons/logOut.svg"
+            />
+          </div>
         </div>
-      </button>
+      </div>
       <div
         className="icon-container clear css-zcw12y-Scale e128ygwg1"
       >
