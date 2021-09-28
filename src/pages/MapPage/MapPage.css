@@ -31,16 +31,15 @@
   justify-content: center;
   align-items: center;
   height: 20px;
-  width: 120%;
+  width: 100%;
   position: absolute;
-  bottom: -10px;
-  left: -10%;
+  bottom: -5px;
   filter: blur(3px);
 }
 
 .top-container-shadow {
   height: 15px;
-  width: 120%;
+  width: 100%;
   position: absolute;
   background: var(--darker-shadow);
   filter: blur(1px);
