@@ -8,6 +8,7 @@ import { SEARCH_PATH } from '../../App';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Scale } from '../../utils/animations';
+import { getIconPath } from '../../utils/items';
 
 /**
  * The page displaying the location of the items corresponding to the given category.
@@ -41,8 +42,13 @@ export default function MapPage(props: MapPageProps) {
           </Link>
         </div>
 
-        <h1 className="map-title font-axiforma-semi-bold text-blue text-title">
-          {'Voici les ' + location.state.category.name + 's à proximité'}
+        <img
+          className="map-title-icon"
+          src={getIconPath(location.state.category.name)}
+          alt="Item icon"
+        />
+        <h1 className="font-axiforma-semi-bold text-blue text-title">
+          {location.state.category.name}
         </h1>
       </div>
       <div className="item-map-container">
