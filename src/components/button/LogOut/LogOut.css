@@ -1,5 +1,5 @@
 .log-out {
-  position: fixed;
+  position: absolute;
   margin-top: 50px;
   margin-right: 50px;
   top: 0;

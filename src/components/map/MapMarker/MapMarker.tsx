@@ -7,7 +7,7 @@ import { MapMarkerProps } from './MapMarker.props';
 import circle from '../../../img/circle.png';
 import MapLayer from '../MapLayer/MapLayer';
 
-const CIRCLE_RADIUS = 2;
+const CIRCLE_RADIUS = 3;
 const EARTH_RADIUS = 6378000;
 
 /**
@@ -73,7 +73,7 @@ export default function MapMarker(props: MapMarkerProps) {
         longitude={item.longitude}
         latitude={item.latitude}
         offsetLeft={-15}
-        offsetTop={-27}
+        offsetTop={-30}
       >
         <OutsideAlerter value={false} setValue={togglePopup} detectDrag={true}>
           <button
