@@ -46,7 +46,7 @@ exports[`Map page matches snapshot 1`] = `
               Object {
                 "borderRadius": 50,
                 "filter": "blur(4px)",
-                "height": "calc(120px + 0.5*7px)",
+                "height": "calc(60px + 0.5*7px)",
                 "width": "calc(120px + 0.5*7px)",
               }
             }

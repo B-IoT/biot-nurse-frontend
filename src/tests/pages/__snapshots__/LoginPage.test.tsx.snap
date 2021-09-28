@@ -144,7 +144,7 @@ exports[`Login page matches snapshot 1`] = `
         Object {
           "borderRadius": 50,
           "filter": "blur(4px)",
-          "height": "calc(150px + 0.5*8px)",
+          "height": "calc(50px + 0.5*8px)",
           "width": "calc(150px + 0.5*8px)",
         }
       }
