@@ -23,8 +23,8 @@ export default function Button(props: ButtonProps) {
 
   function parseLength(length: number | string) {
     return length !== undefined && length.constructor === String
-      ? width
-      : '' + width + 'px';
+      ? length
+      : '' + length + 'px';
   }
 
   const stringWidth = parseLength(width);
