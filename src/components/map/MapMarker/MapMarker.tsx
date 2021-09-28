@@ -37,7 +37,7 @@ export default function MapMarker(props: MapMarkerProps) {
   }
 
   return (
-    <div data-testid="map-marker">
+    <div>
       <Popup
         className={showPopup ? 'popup' : 'hidden'}
         latitude={item.latitude}
@@ -45,7 +45,10 @@ export default function MapMarker(props: MapMarkerProps) {
         closeButton={false}
         anchor="top"
       >
-        <div className={showPopup ? 'popup-animation' : 'hidden'}>
+        <div
+          className={showPopup ? 'popup-animation' : 'hidden'}
+          data-testid="marker-popup"
+        >
           <div className="font-axiforma-medium text-blue text-medium">
             {item.category} {item.status}
             <br />
@@ -82,7 +85,12 @@ export default function MapMarker(props: MapMarkerProps) {
               togglePopup(!showPopup);
             }}
           >
-            <img src={tracker} alt="Tracker" width={30} />
+            <img
+              data-testid="map-marker"
+              src={tracker}
+              alt="Tracker"
+              width={30}
+            />
           </button>
         </OutsideAlerter>
       </Marker>
