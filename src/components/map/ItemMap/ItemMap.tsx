@@ -142,7 +142,7 @@ export default function ItemMap(props: ItemMapProps) {
         <ReactMapGl
           {...viewport}
           width="100vw"
-          height="calc(100vh - 175px + 50px)"
+          height="calc(100vh - 125px + 30px)"
           onViewportChange={setViewport}
           mapStyle={'mapbox://styles/ludohoffstetter/cklfuba923yaa17miwvtmd26g'}
         >
@@ -206,10 +206,11 @@ export default function ItemMap(props: ItemMapProps) {
       </div>
 
       <Container
-        width={125}
+        width={110}
         height={''}
         borderRadius={50}
-        shadowOffset={10}
+        shadowOffset={5}
+        blur={2}
         surfaceGradient={false}
         style={{ left: '3%' }}
       >
@@ -227,10 +228,11 @@ export default function ItemMap(props: ItemMapProps) {
       </Container>
 
       <Container
-        width={125}
+        width={110}
         height={''}
         borderRadius={50}
-        shadowOffset={10}
+        shadowOffset={5}
+        blur={2}
         surfaceGradient={false}
         style={{ right: '3%' }}
       >

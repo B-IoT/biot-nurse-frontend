@@ -22,6 +22,11 @@ export interface ContainerProps {
   shadowOffset: number;
 
   /**
+   * The amount of blur applied on the container
+   */
+  blur: number;
+
+  /**
    * Boolean that toggles the surface gradient
    */
   surfaceGradient: boolean;

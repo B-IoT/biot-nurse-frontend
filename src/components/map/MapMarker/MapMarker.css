@@ -46,6 +46,10 @@
   justify-content: center;
 }
 
+.marker-info {
+  margin-top: 2px;
+}
+
 .tracker-animation {
   cursor: pointer;
   animation-name: bounce;

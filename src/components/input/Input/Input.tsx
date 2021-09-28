@@ -20,13 +20,13 @@ export default function Input(props: InputProps) {
       style={Object.assign({}, { width: width }, style)}
     >
       <div className="search-mask" style={{ width: width }}>
-        <div className="search-shadow" style={{ width: width + 100 }} />
-        <div className="search-light" style={{ width: width + 100 }} />
+        <div className="search-shadow" style={{ width: width + 50 }} />
+        <div className="search-light" style={{ width: width + 50 }} />
       </div>
-      <div className="search-blur" style={{ width: width + 5 }}>
+      <div className="search-blur" style={{ width: width + 10 }}>
         <input
           type={isPassword ? 'password' : ''}
-          className="search-text axiforma-light-blue-21px"
+          className="search-text font-axiforma-light text-blue text-small"
           placeholder={defaultText}
           onChange={(e) => {
             if (setKeyword) {
@@ -34,7 +34,7 @@ export default function Input(props: InputProps) {
             }
           }}
           onKeyPress={(e) => (e.key === 'Enter' ? enterHandler() : null)}
-          style={{ width: width - 75 }}
+          style={{ width: width - 50 }}
           data-testid="input"
         />
       </div>

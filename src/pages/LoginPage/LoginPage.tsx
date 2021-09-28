@@ -36,7 +36,7 @@ export default function LoginPage() {
       <Input
         setKeyword={setUsername}
         defaultText="Nom d'utilisateur"
-        width={350}
+        width={250}
         style={{}}
         isPassword={false}
         enterHandler={() => null}
@@ -44,28 +44,29 @@ export default function LoginPage() {
       <Input
         setKeyword={setPassword}
         defaultText="Mot de passe"
-        width={350}
+        width={250}
         style={{ marginTop: 15 }}
         isPassword={true}
         enterHandler={handleSignIn}
       />
       {showError && (
-        <div className="error-text login-error" data-testid="error-text">
+        <div className="text-error login-error" data-testid="error-text">
           {'Identifiant ou mot de passe incorrect.'}
         </div>
       )}
 
       <Button
         onClick={handleSignIn}
-        width={180}
-        height={75}
-        borderRadius={37}
+        width={150}
+        height={50}
+        borderRadius={50}
         shadowOffset={10}
+        blur={2}
         surfaceGradient={true}
         style={{ marginTop: 35 }}
       >
         <Scale
-          className="button-text axiforma-medium-blue-22px"
+          className="button-text font-axiforma-medium text-blue text-small"
           style={{ width: 180 }}
         >
           {'Connexion'}

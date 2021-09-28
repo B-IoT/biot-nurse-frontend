@@ -3,8 +3,8 @@
   justify-content: center;
   display: flex;
   flex-direction: column;
-  padding-top: 75px;
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .search-title {
@@ -15,9 +15,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 50%;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  width: 80%;
+  margin-top: 20px;
 }
 
 .item-container {
@@ -25,9 +24,9 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  border-radius: 50px;
-  height: 210px;
-  width: 210px;
+  border-radius: 30px;
+  height: 160px;
+  width: 160px;
   margin: 20px;
   transform: scale(0.9);
   -webkit-transform-origin: center;
@@ -42,11 +41,11 @@
 
 .item-icon {
   position: relative;
-  height: 80px;
+  height: 60px;
 }
 
 .item-text {
   position: relative;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 12px;
 }

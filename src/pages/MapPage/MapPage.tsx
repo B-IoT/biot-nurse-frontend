@@ -8,7 +8,6 @@ import { SEARCH_PATH } from '../../App';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import { Scale } from '../../utils/animations';
-import Container from '../../components/button/Container/Container';
 
 /**
  * The page displaying the location of the items corresponding to the given category.
@@ -19,36 +18,32 @@ export default function MapPage(props: MapPageProps) {
   return (
     <div className="map-page">
       <div className="top-container">
-        <Container
-          width={'100%'}
-          height={200}
-          borderRadius={0}
-          shadowOffset={10}
-          surfaceGradient={false}
-          style={{}}
-        >
-          <div className="back-button">
-            <Link to={SEARCH_PATH} style={{ textDecoration: 'none' }}>
-              <Button
-                onClick={() => null}
-                width={180}
-                height={75}
-                borderRadius={75}
-                shadowOffset={10}
-                surfaceGradient={true}
-                style={{}}
-              >
-                <Scale className="back-text axiforma-book-normal-blue-30px">
-                  {'< Retour'}
-                </Scale>
-              </Button>
-            </Link>
-          </div>
+        <div className="top-container-blur">
+          <div className="top-container-shadow" />
+          <div className="top-container-ambient" />
+        </div>
+        <div className="back-button">
+          <Link to={SEARCH_PATH} style={{ textDecoration: 'none' }}>
+            <Button
+              onClick={() => null}
+              width={120}
+              height={60}
+              borderRadius={50}
+              blur={2}
+              shadowOffset={7}
+              surfaceGradient={true}
+              style={{}}
+            >
+              <Scale className="back-text font-axiforma-book text-blue text-medium">
+                {'< Retour'}
+              </Scale>
+            </Button>
+          </Link>
+        </div>
 
-          <h1 className="map-title axiforma-semi-bold-blue-50px">
-            {'Voici les ' + location.state.category.name + 's à proximité'}
-          </h1>
-        </Container>
+        <h1 className="map-title font-axiforma-semi-bold text-blue text-title">
+          {'Voici les ' + location.state.category.name + 's à proximité'}
+        </h1>
       </div>
       <div className="item-map-container">
         <ItemMap category={location.state.category} />

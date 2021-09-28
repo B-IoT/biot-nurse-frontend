@@ -44,10 +44,11 @@ export default function SearchPage() {
             >
               <Button
                 onClick={() => null}
-                width={210}
-                height={210}
-                borderRadius={50}
-                shadowOffset={20}
+                width={160}
+                height={160}
+                borderRadius={30}
+                blur={4}
+                shadowOffset={15}
                 surfaceGradient={true}
                 style={{}}
                 data-testid="item-button"
@@ -58,7 +59,7 @@ export default function SearchPage() {
                     src={getIconPath(category.name)}
                     alt="Item icon"
                   />
-                  <div className="item-text axiforma-medium-blue-18px">
+                  <div className="item-text font-axiforma-medium text-blue text-small">
                     {' '}
                     {category.name}{' '}
                   </div>
@@ -72,14 +73,14 @@ export default function SearchPage() {
 
   return (
     <div className="search-page">
-      <h1 className="search-title axiforma-bold-blue-70px">
+      <h1 className="search-title font-axiforma-bold text-blue text-title">
         {'Que cherchez-vous ?'}
       </h1>
       <Input
         setKeyword={setKeyword}
         defaultText="Rechercher"
-        width={550}
-        style={{ marginTop: 50 }}
+        width={300}
+        style={{ marginTop: 25 }}
         isPassword={false}
         enterHandler={() => null}
       />

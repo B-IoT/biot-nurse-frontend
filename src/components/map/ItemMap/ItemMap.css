@@ -25,7 +25,7 @@
 
 .map-control-right {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   padding-top: 30px;
@@ -33,7 +33,7 @@
 
 .map-control-left {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   flex-direction: column;
   padding-top: 30px;

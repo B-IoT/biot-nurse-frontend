@@ -15,10 +15,11 @@ export default function RoundButton(props: RoundButtonProps) {
     <Button
       data-testid="round-button"
       onClick={onClick}
-      width={75}
-      height={75}
-      borderRadius={75}
-      shadowOffset={10}
+      width={60}
+      height={60}
+      borderRadius={60}
+      blur={2}
+      shadowOffset={5}
       surfaceGradient={true}
       style={{ marginBottom: 30 }}
     >

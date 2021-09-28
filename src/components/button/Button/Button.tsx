@@ -15,6 +15,7 @@ export default function Button(props: ButtonProps) {
     height,
     borderRadius,
     shadowOffset,
+    blur,
     surfaceGradient,
     style,
     children,
@@ -28,7 +29,12 @@ export default function Button(props: ButtonProps) {
     >
       <FadeIn
         className="button-pressed"
-        style={{ width: width, height: height, borderRadius: borderRadius }}
+        style={{
+          width: width,
+          height: height,
+          borderRadius: borderRadius,
+          filter: 'blur(' + 2 * blur + 'px)',
+        }}
       />
       <FadeOut className="button-unpressed">
         <Container
@@ -36,6 +42,7 @@ export default function Button(props: ButtonProps) {
           height={height}
           style={{}}
           borderRadius={borderRadius}
+          blur={blur}
           shadowOffset={shadowOffset}
           surfaceGradient={surfaceGradient}
           children={children}

@@ -10,6 +10,7 @@ export default function Container(props: ContainerProps) {
     height,
     borderRadius,
     shadowOffset,
+    blur,
     surfaceGradient,
     style,
     children,
@@ -21,11 +22,11 @@ export default function Container(props: ContainerProps) {
       style={Object.assign({}, { width: width, height: height }, style)}
     >
       <div
-        className="neumorphic-ambiant"
-        style={{ borderRadius: borderRadius }}
+        className="neumorphic-div neumorphic-ambiant"
+        style={{ borderRadius: borderRadius, filter: 'blur(' + blur + 'px)' }}
       />
       <div
-        className="neumorphic-light"
+        className="neumorphic-div"
         style={{
           borderRadius: borderRadius,
           boxShadow:
@@ -33,26 +34,31 @@ export default function Container(props: ContainerProps) {
             shadowOffset +
             'px ' +
             shadowOffset +
-            'px calc(1.5*' +
+            'px ' +
             shadowOffset +
-            'px) var(--darker-shadow)',
+            'px ' +
+            'var(--darker-shadow)',
+          filter: 'blur(' + blur + 'px)',
         }}
       />
       <div
-        className="neumorphic-shadow"
+        className="neumorphic-div"
         style={{
           borderRadius: borderRadius,
           boxShadow:
             '-' +
             shadowOffset +
-            'px -' +
+            'px ' +
+            '-' +
             shadowOffset +
-            'px calc(1.5*' +
+            'px ' +
             shadowOffset +
-            'px) var(--lighter-light)',
+            'px ' +
+            'var(--lighter-light)',
           background: surfaceGradient
             ? 'linear-gradient(157.37deg, var(--light) 13.29%, var(--shadow) 84.76%)'
             : 'none',
+          filter: 'blur(' + blur + 'px)',
         }}
       />
       {children}

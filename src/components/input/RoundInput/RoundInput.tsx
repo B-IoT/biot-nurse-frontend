@@ -42,7 +42,7 @@ export default function RoundInput(props: RoundInputProps) {
         detectDrag={false}
       >
         <input
-          className="round-input-text axiforma-book-normal-blue-30px"
+          className="round-input-text font-axiforma-book text-blue text-small"
           value={localInput}
           onChange={(e) => setLocalInput(e.target.value)}
           onKeyPress={(e) => (e.key === 'Enter' ? parseFloor() : null)}

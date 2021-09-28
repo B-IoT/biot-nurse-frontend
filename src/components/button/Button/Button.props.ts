@@ -22,6 +22,11 @@ export interface ButtonProps {
   borderRadius: number | string;
 
   /**
+   * The amount of blur applied on the button
+   */
+  blur: number;
+
+  /**
    * The offset of the neumorphic shadow
    */
   shadowOffset: number;

@@ -2,28 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   position: absolute;
 }
 
-.neumorphic-shadow {
-  background: var(--background);
-  filter: blur(5px);
-  position: absolute;
-  height: 100%;
-  width: 100%;
-}
-
-.neumorphic-light {
-  filter: blur(5px);
+.neumorphic-div {
   position: absolute;
   height: 100%;
   width: 100%;
 }
 
 .neumorphic-ambiant {
-  filter: blur(2px);
   background: var(--background);
-  position: absolute;
-  height: 100%;
-  width: 100%;
 }

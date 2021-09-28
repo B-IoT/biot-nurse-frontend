@@ -7,7 +7,7 @@
 
 .back-button {
   position: absolute;
-  left: 5%;
+  left: calc(5% - 20px);
 }
 
 .map-title {
@@ -20,15 +20,44 @@
   justify-content: center;
   display: flex;
   position: relative;
-  height: 175px;
+  height: 125px;
   width: 100%;
   z-index: 999;
+  background: var(--background);
+}
+
+.top-container-blur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 120%;
+  position: absolute;
+  bottom: -10px;
+  left: -10%;
+  filter: blur(3px);
+}
+
+.top-container-shadow {
+  height: 15px;
+  width: 120%;
+  position: absolute;
+  background: var(--darker-shadow);
+  filter: blur(1px);
+}
+
+.top-container-ambient {
+  height: 50%;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  background: var(--background);
 }
 
 .item-map-container {
   position: absolute;
   width: 100%;
-  top: 175px;
-  height: calc(100vh - 175px);
+  top: 125px;
+  height: calc(100vh - 125px);
   overflow: hidden;
 }

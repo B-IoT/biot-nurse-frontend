@@ -30,6 +30,12 @@ export default function MapMarker(props: MapMarkerProps) {
     return item.latitude + (dy / EARTH_RADIUS) * (180 / Math.PI);
   }
 
+  function getClassName(condition: boolean) {
+    return condition
+      ? 'hidden'
+      : 'marker-info font-axiforma-light text-blue text-small';
+  }
+
   return (
     <div data-testid="map-marker">
       <Popup
@@ -40,44 +46,24 @@ export default function MapMarker(props: MapMarkerProps) {
         anchor="top"
       >
         <div className={showPopup ? 'popup-animation' : 'hidden'}>
-          <div className="axiforma-medium-blue-22px">
+          <div className="font-axiforma-medium text-blue text-medium">
             {item.category} {item.status}
             <br />
             <br />
           </div>
-          <div
-            className={
-              item.floor == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.floor == null)}>
             {'Étage: ' + item.floor}
           </div>
-          <div
-            className={
-              item.service == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.service == null)}>
             {'Service: ' + item.service}
           </div>
-          <div
-            className={
-              item.battery == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.battery == null)}>
             {'Batterie: ' + item.battery + '%'}
           </div>
-          <div
-            className={
-              item.temperature == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.temperature == null)}>
             {'Température: ' + item.temperature + '°C'}
           </div>
-          <div
-            className={
-              item.beacon == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.beacon == null)}>
             {'MAC: ' + item.beacon}
           </div>
         </div>
