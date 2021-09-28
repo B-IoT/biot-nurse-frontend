@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Marker, Popup } from 'react-map-gl';
 import OutsideAlerter from '../../../utils/OutsideAlerter';
 import tracker from '../../../img/marker.svg';
 import './MapMarker.css';
 import { MapMarkerProps } from './MapMarker.props';
+import circle from '../../../img/circle.png';
+import MapLayer from '../MapLayer/MapLayer';
+
+const CIRCLE_RADIUS = 3;
+const EARTH_RADIUS = 6378000;
 
 /**
  * Marker that indicates the location of a given item and display its information
@@ -13,8 +18,26 @@ export default function MapMarker(props: MapMarkerProps) {
   const { item } = props;
   const [showPopup, togglePopup] = useState(false);
 
+  function computeLongitude(dx: number) {
+    return (
+      item.longitude +
+      ((dx / EARTH_RADIUS) * (180 / Math.PI)) /
+        Math.cos((item.latitude * Math.PI) / 180)
+    );
+  }
+
+  function computeLatitude(dy: number) {
+    return item.latitude + (dy / EARTH_RADIUS) * (180 / Math.PI);
+  }
+
+  function getClassName(condition: boolean) {
+    return condition
+      ? 'hidden'
+      : 'marker-info font-axiforma-light text-blue text-small';
+  }
+
   return (
-    <div data-testid="map-marker">
+    <div>
       <Popup
         className={showPopup ? 'popup' : 'hidden'}
         latitude={item.latitude}
@@ -22,45 +45,28 @@ export default function MapMarker(props: MapMarkerProps) {
         closeButton={false}
         anchor="top"
       >
-        <div className={showPopup ? 'popup-animation' : 'hidden'}>
-          <div className="axiforma-medium-blue-22px">
+        <div
+          className={showPopup ? 'popup-animation' : 'hidden'}
+          data-testid="marker-popup"
+        >
+          <div className="font-axiforma-medium text-blue text-medium">
             {item.category} {item.status}
             <br />
             <br />
           </div>
-          <div
-            className={
-              item.floor == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.floor == null)}>
             {'Étage: ' + item.floor}
           </div>
-          <div
-            className={
-              item.service == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.service == null)}>
             {'Service: ' + item.service}
           </div>
-          <div
-            className={
-              item.battery == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.battery == null)}>
             {'Batterie: ' + item.battery + '%'}
           </div>
-          <div
-            className={
-              item.temperature == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.temperature == null)}>
             {'Température: ' + item.temperature + '°C'}
           </div>
-          <div
-            className={
-              item.beacon == null ? 'hidden' : 'axiforma-light-blue-20px'
-            }
-          >
+          <div className={getClassName(item.beacon == null)}>
             {'MAC: ' + item.beacon}
           </div>
         </div>
@@ -79,10 +85,27 @@ export default function MapMarker(props: MapMarkerProps) {
               togglePopup(!showPopup);
             }}
           >
-            <img src={tracker} alt="Tracker" width={30} />
+            <img
+              data-testid="map-marker"
+              src={tracker}
+              alt="Tracker"
+              width={30}
+            />
           </button>
         </OutsideAlerter>
       </Marker>
+      <MapLayer
+        id={'circle-' + item.id}
+        floor={0}
+        opacity={1}
+        floors={{ 0: circle }}
+        coordinates={[
+          [computeLongitude(CIRCLE_RADIUS), computeLatitude(CIRCLE_RADIUS)],
+          [computeLongitude(CIRCLE_RADIUS), computeLatitude(-CIRCLE_RADIUS)],
+          [computeLongitude(-CIRCLE_RADIUS), computeLatitude(-CIRCLE_RADIUS)],
+          [computeLongitude(-CIRCLE_RADIUS), computeLatitude(CIRCLE_RADIUS)],
+        ]}
+      />
     </div>
   );
 }

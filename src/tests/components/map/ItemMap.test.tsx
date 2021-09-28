@@ -1,7 +1,6 @@
 import { render } from '../../../setupTests';
 import { screen } from '@testing-library/react';
 import { getItemsByCategory } from '../../../api/api';
-import React from 'react';
 import ItemMap from '../../../components/map/ItemMap/ItemMap';
 
 const items = [
@@ -47,12 +46,12 @@ jest.mock('../../../api/api');
 
 test('Item map renders markers', async () => {
   getItemsByCategory.mockResolvedValue(items);
-  render(<ItemMap itemName="ECG" />);
+  render(<ItemMap category={{ id: 1, name: 'ECG' }} />);
   expect(await screen.findByTestId('map')).toBeDefined();
 });
 
 test('Item map does not display map if no items', async () => {
   getItemsByCategory.mockResolvedValue(undefined);
-  render(<ItemMap itemName="Lit" />);
+  render(<ItemMap category={{ id: 2, name: 'Lit' }} />);
   expect(await screen.findByTestId('hidden')).toBeDefined();
 });

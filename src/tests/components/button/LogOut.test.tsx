@@ -5,7 +5,7 @@ import LogOut from '../../../components/button/LogOut/LogOut';
 
 test('Log out deletes token', () => {
   render(<LogOut />);
-  fireEvent.click(screen.getByTestId('round-button'));
+  fireEvent.click(screen.getByTestId('button'));
 
   expect(localStorage.getItem('token')).toBeNull();
   expect(localStorage.getItem('tokenDate')).toBeNull();

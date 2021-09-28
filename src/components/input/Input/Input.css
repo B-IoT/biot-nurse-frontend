@@ -2,31 +2,31 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  height: 85px;
+  height: 65px;
 }
 
 .search-mask {
-  border-radius: 39px;
-  height: 77px;
+  border-radius: 25px;
+  height: 55px;
   overflow: hidden;
   position: absolute;
 }
 
 .search-shadow {
-  border-radius: 39px;
-  filter: blur(7px);
-  border: 15px solid var(--darker-shadow);
-  height: 150px;
+  border-radius: 25px;
+  filter: blur(2px);
+  border: 12px solid var(--darker-shadow);
+  height: 100px;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .search-light {
-  border-radius: 39px;
-  filter: blur(7px);
-  border: 15px solid var(--lighter-light);
-  height: 150px;
+  border-radius: 25px;
+  filter: blur(2px);
+  border: 12px solid var(--lighter-light);
+  height: 100px;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -35,10 +35,10 @@
 .search-blur {
   display: flex;
   align-items: center;
-  -webkit-backdrop-filter: blur(4px) brightness(100%);
-  backdrop-filter: blur(4px) brightness(100%);
-  border-radius: 39px;
-  height: 90px;
+  justify-content: center;
+  filter: blur(4px);
+  border-radius: 25px;
+  height: 75px;
   position: absolute;
 }
 

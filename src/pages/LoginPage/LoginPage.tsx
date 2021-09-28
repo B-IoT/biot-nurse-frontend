@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 
 import './LoginPage.css';
 import Input from '../../components/input/Input/Input';
-import logo from '../../img/logoColor.png';
+import logo from '../../img/logo.png';
 import Button from '../../components/button/Button/Button';
 import { authenticate } from '../../api/api';
 import { useHistory } from 'react-router-dom';
 import { SEARCH_PATH } from '../../App';
+import { Scale } from '../../utils/animations';
 
 /**
  * The login page.
@@ -29,13 +30,13 @@ export default function LoginPage() {
 
   return (
     <div className="center-login">
-      <a href="https://biot.webflow.io">
-        <img className="login-logo" src={logo} alt="BIoT logo" />
+      <a href="https://www.b-iot.ch">
+        <img className="login-logo" src={logo} alt="BioT logo" />
       </a>
       <Input
         setKeyword={setUsername}
         defaultText="Nom d'utilisateur"
-        width={350}
+        width={250}
         style={{}}
         isPassword={false}
         enterHandler={() => null}
@@ -43,22 +44,34 @@ export default function LoginPage() {
       <Input
         setKeyword={setPassword}
         defaultText="Mot de passe"
-        width={350}
+        width={250}
         style={{ marginTop: 15 }}
         isPassword={true}
         enterHandler={handleSignIn}
       />
       {showError && (
-        <div className="error-text login-error" data-testid="error-text">
+        <div className="text-error login-error" data-testid="error-text">
           {'Identifiant ou mot de passe incorrect.'}
         </div>
       )}
+
       <Button
-        text="Connexion"
         onClick={handleSignIn}
-        width={200}
+        width={150}
+        height={50}
+        borderRadius={50}
+        shadowOffset={8}
+        blur={2}
+        surfaceGradient={true}
         style={{ marginTop: 35 }}
-      />
+      >
+        <Scale
+          className="button-text font-axiforma-medium text-blue text-small"
+          style={{ width: 180 }}
+        >
+          {'Connexion'}
+        </Scale>
+      </Button>
     </div>
   );
 }

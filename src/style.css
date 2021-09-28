@@ -1,13 +1,6 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css');
 
 @font-face {
-  font-family: 'Axiforma-Book';
-  font-weight: 1 1000;
-  src: url('https://anima-uploads.s3.amazonaws.com/5c59b0a881353e000dcaa8e8/Kastelov - Axiforma Book.otf')
-    format('opentype');
-}
-
-@font-face {
   font-family: 'Axiforma-Light';
   font-weight: 1 1000;
   src: url('https://anima-uploads.s3.amazonaws.com/596db24aa0dc3c000d9a4ed2/Axiforma-Light.ttf')
@@ -15,10 +8,10 @@
 }
 
 @font-face {
-  font-family: 'Axiforma-Bold';
+  font-family: 'Axiforma-Book';
   font-weight: 1 1000;
-  src: url('https://anima-uploads.s3.amazonaws.com/596db24aa0dc3c000d9a4ed2/Axiforma-Bold.ttf')
-    format('truetype');
+  src: url('https://anima-uploads.s3.amazonaws.com/5c59b0a881353e000dcaa8e8/Kastelov - Axiforma Book.otf')
+    format('opentype');
 }
 
 @font-face {
@@ -35,79 +28,67 @@
     format('opentype');
 }
 
+@font-face {
+  font-family: 'Axiforma-Bold';
+  font-weight: 1 1000;
+  src: url('https://anima-uploads.s3.amazonaws.com/596db24aa0dc3c000d9a4ed2/Axiforma-Bold.ttf')
+    format('truetype');
+}
+
 * {
   box-sizing: border-box;
 }
 
-.axiforma-bold-blue-70px {
-  color: var(--blue);
-  font-family: 'Axiforma-Bold', Helvetica, Arial, serif;
-  font-size: 70px;
+.font-axiforma-light {
+  font-family: 'Axiforma-Light', Helvetica, Arial, serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 300;
 }
 
-.axiforma-semi-bold-blue-50px {
-  color: var(--blue);
-  font-family: 'Axiforma-SemiBold', Helvetica, Arial, serif;
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 400;
-}
-
-.axiforma-book-normal-blue-30px {
-  color: var(--blue);
+.font-axiforma-book {
   font-family: 'Axiforma-Book', Helvetica, Arial, serif;
-  font-size: 30px;
   font-style: normal;
   font-weight: 400;
 }
 
-.axiforma-light-blue-21px {
-  color: var(--blue);
-  font-family: 'Axiforma-Light', Helvetica, Arial, serif;
-  font-size: 21px;
-  font-style: normal;
-  font-weight: 300;
-}
-
-.axiforma-medium-blue-18px {
-  color: var(--blue);
+.font-axiforma-medium {
   font-family: 'Axiforma-Medium', Helvetica, Arial, serif;
-  font-size: 18px;
   font-style: normal;
   font-weight: 500;
 }
 
-.axiforma-medium-blue-22px {
-  color: var(--blue);
-  font-family: 'Axiforma-Medium', Helvetica, Arial, serif;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 500;
-}
-
-.axiforma-light-blue-20px {
-  color: var(--blue);
-  font-family: 'Axiforma-Light', Helvetica, Arial, serif;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 23px;
-}
-
-.axiforma-semi-bold-spindle-120px {
-  color: var(--spindle);
+.font-axiforma-semi-bold {
   font-family: 'Axiforma-SemiBold', Helvetica, Arial, serif;
-  font-size: 120px;
   font-style: normal;
   font-weight: 600;
 }
 
-.error-text {
+.font-axiforma-bold {
+  font-family: 'Axiforma-Bold', Helvetica, Arial, serif;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.text-title {
+  font-size: 40px;
+}
+
+.text-medium {
+  font-size: 20px;
+}
+
+.text-small {
+  font-size: 16px;
+}
+
+.text-error {
   color: var(--error-red);
   font-family: 'Axiforma-Light', Helvetica, Arial, serif;
-  font-size: 20px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 300;
 }
@@ -125,8 +106,7 @@
   --blue: rgb(38, 115, 232);
   --half-blue: rgb(143, 168, 207);
   --background: rgb(238, 242, 251);
-  --semi-background: rgba(238, 242, 251, 0.3);
-  --spindle: rgb(191, 208, 242);
+  --semi-background: rgba(238, 242, 251, 0.9);
   --error-red: rgb(255, 75, 76);
 
   --light: rgb(249, 251, 255);

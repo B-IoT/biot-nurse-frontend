@@ -12,6 +12,14 @@ export interface Item {
   floor: number;
 }
 
+/**
+ * An item category
+ */
+export interface Category {
+  id: number;
+  name: string;
+}
+
 const displayTextVersion: Record<string, string> = {
   available: 'disponible',
   unavailable: 'indisponible',
@@ -42,6 +50,20 @@ export function simplifyText(text: string): string {
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '');
+}
+
+/**
+ * Extracts the subcategory from the given category string, if it is present, otherwise it returns the string.
+ * @param fullCategory the category string, whose format is "category.subcategory"
+ * @returns the subcategory if present, the given string otherwise
+ */
+export function extractSubcategory(fullCategory: string): string {
+  const split = fullCategory.split('.');
+  if (split.length > 1) {
+    return split[1];
+  } else {
+    return fullCategory;
+  }
 }
 
 /**

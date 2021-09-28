@@ -46,6 +46,10 @@
   justify-content: center;
 }
 
+.marker-info {
+  margin-top: 2px;
+}
+
 .tracker-animation {
   cursor: pointer;
   animation-name: bounce;
@@ -66,12 +70,14 @@
 }
 
 .popup-animation {
-  background-color: var(--semi-background);
   border-radius: 15px;
   padding: 20px 20px 15px;
-  box-shadow: 0 0 15px var(--darkest-shadow);
-  -webkit-backdrop-filter: blur(20px) brightness(115%) contrast(85%);
-  backdrop-filter: blur(20px) brightness(115%) contrast(85%);
+  background: linear-gradient(
+    157.37deg,
+    var(--light) 13.29%,
+    var(--background) 84.76%
+  );
+  box-shadow: 8px 8px 8px var(--darkest-shadow);
 
   cursor: pointer;
   animation-name: scale;

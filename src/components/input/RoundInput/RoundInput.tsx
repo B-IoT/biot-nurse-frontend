@@ -10,9 +10,16 @@ import { RoundInputProps } from './RoundInput.props';
 export default function RoundInput(props: RoundInputProps) {
   const { input, setInput } = props;
 
-  const [localInput, setLocalInput] = useState('' + input);
+  function filterInput(inputValue: number) {
+    if (inputValue === Infinity) {
+      return '';
+    }
+    return '' + inputValue;
+  }
+
+  const [localInput, setLocalInput] = useState(filterInput(input));
   useEffect(() => {
-    setLocalInput('' + input);
+    setLocalInput(filterInput(input));
   }, [input]);
 
   const parseFloor = () => {
@@ -22,16 +29,20 @@ export default function RoundInput(props: RoundInputProps) {
       if (setInput) setInput(parseInt(digits, 10));
       setLocalInput(digits);
     } else {
-      setLocalInput('' + input);
+      setLocalInput(filterInput(input));
     }
   };
 
   return (
     <div className="round-input">
       <img className="round-input-img" src={roundInput} alt="Round input" />
-      <OutsideAlerter value={input} setValue={setLocalInput} detectDrag={false}>
+      <OutsideAlerter
+        value={filterInput(input)}
+        setValue={setLocalInput}
+        detectDrag={false}
+      >
         <input
-          className="round-input-text axiforma-book-normal-blue-30px"
+          className="round-input-text font-axiforma-semi-bold text-blue text-medium"
           value={localInput}
           onChange={(e) => setLocalInput(e.target.value)}
           onKeyPress={(e) => (e.key === 'Enter' ? parseFloor() : null)}
