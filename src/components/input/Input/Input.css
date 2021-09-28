@@ -35,8 +35,8 @@
 .search-blur {
   display: flex;
   align-items: center;
-  -webkit-backdrop-filter: blur(4px) brightness(100%);
-  backdrop-filter: blur(4px) brightness(100%);
+  justify-content: center;
+  filter: blur(4px);
   border-radius: 25px;
   height: 75px;
   position: absolute;
