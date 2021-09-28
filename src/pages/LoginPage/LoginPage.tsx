@@ -60,7 +60,7 @@ export default function LoginPage() {
         width={150}
         height={50}
         borderRadius={50}
-        shadowOffset={10}
+        shadowOffset={8}
         blur={2}
         surfaceGradient={true}
         style={{ marginTop: 35 }}

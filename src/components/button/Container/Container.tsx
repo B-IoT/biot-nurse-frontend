@@ -18,11 +18,11 @@ export default function Container(props: ContainerProps) {
 
   return (
     <div
-      className='neumorphic-container'
+      className="neumorphic-container"
       style={Object.assign({}, { width: width, height: height }, style)}
     >
       <div
-        className='neumorphic-div'
+        className="neumorphic-div"
         style={{
           height: 'calc(100% + ' + shadowOffset + 'px)',
           width: 'calc(100% + ' + shadowOffset + 'px)',
@@ -35,7 +35,7 @@ export default function Container(props: ContainerProps) {
         }}
       />
       <div
-        className='neumorphic-div'
+        className="neumorphic-div"
         style={{
           height: 'calc(100% + ' + shadowOffset + 'px)',
           width: 'calc(100% + ' + shadowOffset + 'px)',
@@ -48,7 +48,7 @@ export default function Container(props: ContainerProps) {
         }}
       />
       <div
-        className='neumorphic-div neumorphic-ambiant'
+        className="neumorphic-div neumorphic-ambiant"
         style={{
           height: '100%',
           width: '100%',
