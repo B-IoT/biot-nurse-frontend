@@ -18,6 +18,10 @@ export default function MapPage(props: MapPageProps) {
 
   return (
     <div className="map-page">
+      <div className="item-map-container">
+        <ItemMap category={location.state.category} />
+      </div>
+
       <div className="top-container">
         <div className="top-container-blur">
           <div className="top-container-shadow" />
@@ -50,9 +54,6 @@ export default function MapPage(props: MapPageProps) {
         <h1 className="font-axiforma-semi-bold text-blue text-title">
           {location.state.category.name}
         </h1>
-      </div>
-      <div className="item-map-container">
-        <ItemMap category={location.state.category} />
       </div>
     </div>
   );

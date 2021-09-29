@@ -22,10 +22,10 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  position: relative;
+  position: absolute;
+  top: 0;
   height: 125px;
   width: 100%;
-  z-index: 999;
   background: var(--background);
 }
 
@@ -54,6 +54,7 @@
   top: 0;
   position: absolute;
   background: var(--background);
+  border-bottom: 3px solid var(--light);
 }
 
 .item-map-container {
