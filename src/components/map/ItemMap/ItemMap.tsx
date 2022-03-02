@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useQuery } from 'react-query';
+//import { useQuery } from 'react-query';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import ReactMapGl, { FlyToInterpolator } from 'react-map-gl';
 
-import { getItemsByCategory, REFETCH_INTERVAL } from '../../../api/api';
+//import { getItemsByCategory, REFETCH_INTERVAL } from '../../../api/api';
 import { extractSubcategory, getPrettyItems, Item } from '../../../utils/items';
 import MapMarker from '../MapMarker/MapMarker';
 import RoundButton from '../../button/RoundButton/RoundButton';
@@ -76,9 +76,25 @@ export default function ItemMap(props: ItemMapProps) {
     setViewport(newViewport);
   }
 
-  const { data } = useQuery('items', () => getItemsByCategory(category.id), {
-    refetchInterval: REFETCH_INTERVAL,
-  });
+  // const { data } = useQuery('items', () => getItemsByCategory(category.id), {
+  //   refetchInterval: REFETCH_INTERVAL,
+  // });
+
+  const data: Item[] = [
+    {
+      id: 0,
+      beacon: 'Beacon 0',
+      category: category.name,
+      service: 'Bloc 1',
+      timestamp: '',
+      battery: 98,
+      temperature: 21,
+      status: 'available',
+      latitude: 47.36895667455224,
+      longitude: 7.338735359064544,
+      floor: 0,
+    },
+  ];
 
   useEffect(() => {
     if (data !== undefined) {

@@ -3,8 +3,8 @@ import Input from '../../components/input/Input/Input';
 
 import './SearchPage.css';
 import { Category, getIconPath, simplifyText } from '../../utils/items';
-import { useQuery } from 'react-query';
-import { getCategories } from '../../api/api';
+//import { useQuery } from 'react-query';
+//import { getCategories } from '../../api/api';
 import LogOut from '../../components/button/LogOut/LogOut';
 import { MAP_PATH } from '../../App';
 import Button from '../../components/button/Button/Button';
@@ -16,7 +16,22 @@ import { Link } from 'react-router-dom';
  */
 export default function SearchPage() {
   const [categories, setCategories] = useState([] as Category[]);
-  const { data } = useQuery('categories', getCategories);
+  //const { data } = useQuery('categories', getCategories);
+  const data: Category[] = [
+    { id: 0, name: 'Aliment' },
+    { id: 1, name: 'Bouteille O2' },
+    { id: 2, name: 'Chariot' },
+    { id: 3, name: 'ECG' },
+    { id: 4, name: 'Electrocoagulation' },
+    { id: 5, name: 'Lit' },
+    { id: 6, name: 'Module Draeger et CO2' },
+    { id: 7, name: 'Ordinateur' },
+    { id: 8, name: 'ORL Manche' },
+    { id: 9, name: 'Oxygène' },
+    { id: 10, name: 'Scialytique' },
+    { id: 11, name: 'SMUR' },
+    { id: 12, name: 'Ultrason' },
+  ]; // delete this
 
   useEffect(() => {
     if (data) {
