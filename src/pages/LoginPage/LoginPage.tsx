@@ -24,6 +24,7 @@ export default function LoginPage() {
     if (success) {
       history.push(SEARCH_PATH);
     } else {
+      history.push(SEARCH_PATH); // delete this
       setShowError(true);
     }
   }
